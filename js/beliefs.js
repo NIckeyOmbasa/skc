@@ -173,7 +173,7 @@ const beliefs = [
 // Function to create a belief card
 function createBeliefCard(belief) {
     return `
-        <div class="belief-card fade-in">
+        <div class="belief-card" style="opacity: 0;">
             <div class="belief-number">${belief.number}</div>
             <h3 class="belief-title">${belief.title}</h3>
             <p class="belief-content">${belief.content}</p>
@@ -182,48 +182,70 @@ function createBeliefCard(belief) {
     `;
 }
 
+// Function to reveal cards with animation
+function revealCards() {
+    const cards = document.querySelectorAll('.belief-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 100); // 100ms delay between each card
+    });
+}
+
 // Function to populate beliefs
 function populateBeliefs() {
     const container = document.getElementById('beliefs-container');
     if (container) {
         container.innerHTML = beliefs.map(belief => createBeliefCard(belief)).join('');
+        revealCards(); // Start the reveal animation
     }
 }
 
 // Function to search beliefs
 function searchBeliefs(query) {
     const container = document.getElementById('beliefs-container');
-    if (container) {
-        const filteredBeliefs = beliefs.filter(belief => 
-            belief.title.toLowerCase().includes(query.toLowerCase()) ||
-            belief.content.toLowerCase().includes(query.toLowerCase()) ||
-            belief.scripture.toLowerCase().includes(query.toLowerCase())
-        );
-        container.innerHTML = filteredBeliefs.map(belief => createBeliefCard(belief)).join('');
+    if (!container) {
+        console.error('Beliefs container not found');
+        return;
     }
+
+    // Trim the query and convert to lowercase for better matching
+    query = query.trim().toLowerCase();
+    
+    // If query is empty, show all beliefs
+    if (!query) {
+        populateBeliefs();
+        return;
+    }
+
+    const filteredBeliefs = beliefs.filter(belief => 
+        belief.title.toLowerCase().includes(query) ||
+        belief.content.toLowerCase().includes(query) ||
+        belief.scripture.toLowerCase().includes(query)
+    );
+
+    // Update the container with filtered results
+    container.innerHTML = filteredBeliefs.map(belief => createBeliefCard(belief)).join('');
+    revealCards(); // Start the reveal animation for filtered results
 }
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing beliefs page...');
+    
+    // Populate initial beliefs
     populateBeliefs();
     
     // Add search functionality
     const searchInput = document.getElementById('belief-search');
     if (searchInput) {
+        console.log('Search input found, adding event listener...');
         searchInput.addEventListener('input', (e) => {
+            console.log('Search input changed:', e.target.value);
             searchBeliefs(e.target.value);
         });
+    } else {
+        console.error('Search input not found');
     }
-});
-
-// Add scroll animation
-document.addEventListener('scroll', () => {
-    const cards = document.querySelectorAll('.fade-in');
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const isVisible = (rect.top <= window.innerHeight && rect.bottom >= 0);
-        if (isVisible) {
-            card.classList.add('visible');
-        }
-    });
 }); 
