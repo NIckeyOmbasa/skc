@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKC | Events</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/HpVbRQyD/sda-Photoroom.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/gilam" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-text">South Kenya Conference<br>Seventh-day Adventist Church</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="dropdown-toggle">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="beliefs.html">Beliefs</a></li>
+                        <li><a href="ministries.html">Ministries</a></li>
+                        <li><a href="churches.html">Churches</a></li>
+                    </ul>
+                </li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html" class="btn-donate">Giving</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="layout-container">
+        <main class="main-content">
+            <section class="events-section">
+                <div class="events-header">
+                    <h1>Events <span id="current-year-display"></span></h1>
+                    <div class="events-controls">
+                        <div class="month-filter">
+                            <select id="month-filter">
+                                <option value="all">Select Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" id="event-search" placeholder="Search events, departments, or venues...">
+                            <button id="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quarter-tabs">
+                    <button class="quarter-tab active" data-quarter="1">Quarter 1</button>
+                    <button class="quarter-tab" data-quarter="2">Quarter 2</button>
+                    <button class="quarter-tab" data-quarter="3">Quarter 3</button>
+                    <button class="quarter-tab" data-quarter="4">Quarter 4</button>
+                </div>
+
+                <div class="events-container">
+                    <!-- Quarter 1 Events -->
+                    <div class="quarter-events active" id="quarter-1">
+                        <div class="month-section" data-month="1">
+                            <h2>January</h2>
+                            <div class="events-grid">
+                                <div class="event-card">
+                                    <div class="event-date">
+                                        <span class="day">15</span>
+                                        <span class="month">Jan</span>
+                                    </div>
+                                    <div class="event-details">
+                                        <h3>Youth Conference</h3>
+                                        <p class="department">Youth Department</p>
+                                        <p class="venue"><i class="fas fa-map-marker-alt"></i> Conference Center</p>
+                                    </div>
+                                </div>
+                                <!-- Add more January events -->
+                            </div>
+                        </div>
+                        <div class="month-section" data-month="2">
+                            <h2>February</h2>
+                            <div class="events-grid">
+                                <!-- February events -->
+                            </div>
+                        </div>
+                        <div class="month-section" data-month="3">
+                            <h2>March</h2>
+                            <div class="events-grid">
+                                <!-- March events -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quarter 2 Events -->
+                    <div class="quarter-events" id="quarter-2">
+                        <div class="month-section" data-month="4">
+                            <h2>April</h2>
+                            <div class="events-grid">
+                                <!-- April events -->
+                            </div>
+                        </div>
+                        <div class="month-section" data-month="5">
+                            <h2>May</h2>
+                            <div class="events-grid">
+                                <!-- May events -->
+                            </div>
+                        </div>
+                        <div class="month-section" data-month="6">
+                            <h2>June</h2>
+                            <div class="events-grid">
+                                <!-- June events -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quarter 3 Events -->
+                    <div class="quarter-events" id="quarter-3">
+                        <div class="month-section" data-month="7">
+                            <h2>July</h2>
+                            <div class="events-grid">
+                                <!-- July events -->
+                            </div>
+                        </div>
+                        <div class="month-section" data-month="8">
+                            <h2>August</h2>
+                            <div class="events-grid">
+                                <!-- August events -->
+                            </div>
+                        </div>
+                        <div class="month-section" data-month="9">
+                            <h2>September</h2>
+                            <div class="events-grid">
+                                <!-- September events -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quarter 4 Events -->
+                    <div class="quarter-events" id="quarter-4">
+                        <div class="month-section" data-month="10">
+                            <h2>October</h2>
+                            <div class="events-grid">
+                                <!-- October events -->
+                            </div>
+                        </div>
+                        <div class="month-section" data-month="11">
+                            <h2>November</h2>
+                            <div class="events-grid">
+                                <!-- November events -->
+                            </div>
+                        </div>
+                        <div class="month-section" data-month="12">
+                            <h2>December</h2>
+                            <div class="events-grid">
+                                <!-- December events -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Side Section -->
+        <aside class="side-section">
+            <div class="logo">
+                <img src="https://i.ibb.co/RkZ1g2wv/sda-logo.png" alt="South Kenya Conference SDA Logo">
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <hr class="footer-divider">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>South Kenya Conference</h3>
+                    <p>Seventh-day Adventist Church</p>
+                    <p>P.O. Box 1234, Nairobi, Kenya</p>
+                    <p>Phone: +254 123 456 789</p>
+                    <p>Email: info@southkenyasda.org</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a class="site-link" href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                        <li><a class="site-link" href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
+                        <li><a class="site-link" href="leadership.html"><i class="fas fa-angle-right"></i> Leadership</a></li>
+                        <li><a class="site-link" href="beliefs.html"><i class="fas fa-angle-right"></i> Beliefs</a></li>
+                        <li><a class="site-link" href="ministries.html"><i class="fas fa-angle-right"></i> Ministries</a></li>
+                        <li><a class="site-link" href="churches.html"><i class="fas fa-angle-right"></i> Churches</a></li>
+                        <li><a class="site-link" href="events.html"><i class="fas fa-angle-right"></i> Events</a></li>
+                        <li><a class="site-link" href="resources.html"><i class="fas fa-angle-right"></i> Resources</a></li>
+                        <li><a class="site-link" href="contact.html"><i class="fas fa-angle-right"></i> Contact</a></li>
+                        <li><a class="site-link" href="donate.html"><i class="fas fa-angle-right"></i> Giving</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> South Kenya Conference. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/events.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKC | Resources</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/HpVbRQyD/sda-Photoroom.png">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/gilam" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-text">South Kenya Conference<br>Seventh-day Adventist Church</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html" class="dropdown-toggle">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="beliefs.html">Beliefs</a></li>
+                        <li><a href="ministries.html">Ministries</a></li>
+                        <li><a href="churches.html">Churches</a></li>
+                    </ul>
+                </li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html" class="btn-donate">Giving</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="layout-container">
+        <main class="main-content">
+            <div class="resources-layout">
+                <!-- Media Section (Left) -->
+                <section class="media-section">
+                    <!-- Media Tabs -->
+                    <div class="media-tabs">
+                        <button class="tab-btn active" data-tab="photos">Photos</button>
+                        <button class="tab-btn" data-tab="videos">Videos</button>
+                        <button class="tab-btn" data-tab="livestream">Live Stream</button>
+                        <button class="tab-btn mobile-only" data-scroll="resources-section">Downloads</button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <!-- Photo Gallery Tab -->
+                        <div class="tab-pane active" id="photos">
+                            <div class="gallery-section">
+                                <div class="gallery-grid">
+                                    <div class="gallery-item">
+                                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=500" alt="Church Service">
+                                        <div class="gallery-overlay">
+                                            <h3>Church Service</h3>
+                                            <p>Sunday Worship</p>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500" alt="Youth Conference">
+                                        <div class="gallery-overlay">
+                                            <h3>Youth Conference</h3>
+                                            <p>Annual Gathering</p>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500" alt="Community Outreach">
+                                        <div class="gallery-overlay">
+                                            <h3>Community Outreach</h3>
+                                            <p>Health Ministry</p>
+                                        </div>
+                                    </div>
+                                    <div class="gallery-item">
+                                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500" alt="Music Ministry">
+                                        <div class="gallery-overlay">
+                                            <h3>Music Ministry</h3>
+                                            <p>Choir Performance</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Stream Tab -->
+                        <div class="tab-pane" id="livestream">
+                            <div class="live-stream-section">
+                                <div class="live-stream-container">
+                                    <div id="live-stream-placeholder" class="live-stream-placeholder">
+                                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800" alt="Live Stream Offline">
+                                        <div class="placeholder-overlay">
+                                            <h3>Live Stream Offline</h3>
+                                            <p>Check back later for live services and events</p>
+                                        </div>
+                                    </div>
+                                    <div id="live-stream-player" class="live-stream-player" style="display: none;">
+                                        <iframe id="youtube-embed" width="100%" height="450" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Videos Tab -->
+                        <div class="tab-pane" id="videos">
+                            <div class="videos-section">
+                                <div class="videos-grid">
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
+                                            <img src="https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?w=500" alt="Sunday Service">
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </div>
+                                        <div class="video-info">
+                                            <h3>Sunday Service Highlights</h3>
+                                            <p>Watch our latest service</p>
+                                        </div>
+                                    </div>
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
+                                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500" alt="Youth Conference">
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </div>
+                                        <div class="video-info">
+                                            <h3>Youth Conference 2024</h3>
+                                            <p>Annual youth gathering</p>
+                                        </div>
+                                    </div>
+                                    <div class="video-card">
+                                        <div class="video-thumbnail">
+                                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500" alt="Community Outreach">
+                                            <div class="play-button">
+                                                <i class="fas fa-play"></i>
+                                            </div>
+                                        </div>
+                                        <div class="video-info">
+                                            <h3>Community Outreach</h3>
+                                            <p>Making a difference</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Downloads Tab -->
+                        <div class="tab-pane" id="downloads">
+                            <div class="resources-section">
+                                <h2>Downloadable Resources</h2>
+                                <div class="resources-list">
+                                    <div class="resource-item">
+                                        <span class="resource-name">Church Bulletin</span>
+                                        <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                                    </div>
+                                    <div class="resource-item">
+                                        <span class="resource-name">Weekly Newsletter</span>
+                                        <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                                    </div>
+                                    <div class="resource-item">
+                                        <span class="resource-name">Sermon Notes</span>
+                                        <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                                    </div>
+                                    <div class="resource-item">
+                                        <span class="resource-name">Event Calendar</span>
+                                        <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resources Section (Right) -->
+                <section class="resources-section" id="resources-section">
+                    <h2>Resources</h2>
+                    <div class="resources-list">
+                        <div class="resource-item">
+                            <span class="resource-name">Church Manual (2022)</span>
+                            <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">Sabbath School Lessons (Q1 2024)</span>
+                            <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">Youth Ministry Handbook</span>
+                            <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">Music Ministry Guidelines</span>
+                            <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">Health Ministry Resources</span>
+                            <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                        </div>
+                        <div class="resource-item">
+                            <span class="resource-name">Children's Ministry Materials</span>
+                            <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+        
+        
+        <!-- Side Section -->
+        <div class="side-section">
+            <div class="logo">
+                <img src="https://i.ibb.co/RkZ1g2wv/sda-logo.png" alt="South Kenya Conference SDA Logo">
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/live-stream.js"></script>
+</body>
+</html>
