@@ -372,6 +372,17 @@ header {
     transition: opacity 0.6s ease-in-out;
 }
 
+.carousel-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
 .carousel-item.active {
     opacity: 1;
 }
@@ -390,7 +401,7 @@ header {
     width: 80%;
     max-width: 800px;
     text-align: center;
-    z-index: 2;
+    z-index: 2; /* Ensure caption is above the overlay */
 }
 
 .carousel-caption h1 {
@@ -3092,4 +3103,109 @@ html {
 /* Resources section scroll target */
 #resources-section {
     scroll-margin-top: 2rem;
+}
+
+/* Statistics Section Styles */
+.statistics-section {
+    padding: 3rem 0;
+    margin: 2rem 0;
+    background: linear-gradient(135deg, #1A3C34 0%, #2a5c54 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+    font-family: 'Gilam', sans-serif;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Animation for numbers */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-number.animate {
+    animation: countUp 1s ease-out forwards;
+}
+
+/* Responsive Design for Statistics */
+@media (max-width: 1024px) {
+    .statistics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .statistics-section {
+        padding: 2rem 0;
+    }
+
+    .statistics-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
 }
