@@ -46,19 +46,20 @@
     <div class="layout-container">
         <!-- Main Content -->
         <div class="main-content">
-    <section class="hero">
-        <div class="hero-text">
+            <section class="hero">
+                <div class="hero-text">
                     <h1>Our Departments</h1>
                     <p>Serving God and our community through various ministries.</p>
-        </div>
-    </section>
+                </div>
+            </section>
 
-    <main>
+            <main>
+
                 <section class="departments">
                     <div class="container">
                         <h2>Our Departments</h2>
                         <div class="departments-grid">
-                            <div class="department-card">
+                            <div class="department-card" data-department="chaplaincy">
                                 <div class="department-logo">
                                     <img src="../assets/images/ACM-Chaplaincy-Logo.svg" alt="Adventist Chaplaincy Ministries Logo">
                                 </div>
@@ -66,7 +67,7 @@
                                 <p>Providing spiritual care and support to healthcare professionals and patients.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="children">
                                 <div class="department-logo">
                                     <img src="../assets/images/children-logo.png" alt="Children's Ministries Logo">
                                 </div>
@@ -74,7 +75,7 @@
                                 <p>Nurturing the spiritual growth and development of children.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="communication">
                                 <div class="department-logo">
                                     <img src="../assets/images/communication-logo.jpg" alt="Communication Department Logo">
                                 </div>
@@ -82,7 +83,7 @@
                                 <p>Sharing the message of hope through various media channels.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="education">
                                 <div class="department-logo">
                                     <img src="../assets/images/education-logo.webp" alt="Education Department Logo">
                                 </div>
@@ -90,7 +91,7 @@
                                 <p>Promoting quality Christian education and lifelong learning.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="family">
                                 <div class="department-logo">
                                     <img src="../assets/images/AFamilyM-Logo.png" alt="Family Ministries Logo">
                                 </div>
@@ -98,7 +99,7 @@
                                 <p>Strengthening families through biblical principles and support.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="health">
                                 <div class="department-logo">
                                     <img src="../assets/images/health-ministries-logo.png" alt="Health Ministries Logo">
                                 </div>
@@ -106,7 +107,7 @@
                                 <p>Promoting physical, mental, and spiritual well-being.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="ministerial">
                                 <div class="department-logo">
                                     <img src="../assets/images/ministerial-logo.webp" alt="Ministerial Association Logo">
                                 </div>
@@ -114,7 +115,7 @@
                                 <p>Supporting and equipping pastors in their ministry.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="volunteer">
                                 <div class="department-logo">
                                     <img src="../assets/images/volunteer-service-logo.svg" alt="Planned Giving & Trust Services Logo">
                                 </div>
@@ -122,7 +123,7 @@
                                 <p>Assisting with voluntary services and charitable giving.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="muslim-relations">
                                 <div class="department-logo">
                                     <img src="../assets/images/AMR-logo.png" alt="Public Affairs and Religious Liberty Logo">
                                 </div>
@@ -130,7 +131,7 @@
                                 <p>Sharing Christ's love to the members of the Islam religion.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="publishing">
                                 <div class="department-logo">
                                     <img src="../assets/images/Publishing_Logo.webp" alt="Publishing Department Logo">
                                 </div>
@@ -138,7 +139,7 @@
                                 <p>Producing and distributing Christian literature and resources.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="sabbath-school">
                                 <div class="department-logo">
                                     <img src="../assets/images/sabbathsch-pm-logo.svg" alt="Sabbath School/Personal Ministries Logo">
                                 </div>
@@ -146,7 +147,7 @@
                                 <p>Coordinating Bible study programs and personal evangelism.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="stewardship">
                                 <div class="department-logo">
                                     <img src="../assets/images/stewardship-logo.webp" alt="Stewardship Department Logo">
                                 </div>
@@ -154,7 +155,7 @@
                                 <p>Teaching biblical principles of financial management.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="women">
                                 <div class="department-logo">
                                     <img src="../assets/images/WomenM_logo.webp" alt="Women's Ministries Logo">
                                 </div>
@@ -162,7 +163,7 @@
                                 <p>Empowering women in service and leadership.</p>
                                 <a href="#" class="btn">Learn More</a>
                             </div>
-                            <div class="department-card">
+                            <div class="department-card" data-department="youth">
                                 <div class="department-logo">
                                     <img src="../assets/images/youth-logo.jpg" alt="Youth Department Logo">
                                 </div>
@@ -175,7 +176,7 @@
                 </section>
             </main>
 
-    <footer>
+            <footer>
                 <hr class="footer-divider">
                 <div class="container">
                     <div class="footer-grid">
@@ -189,7 +190,7 @@
                         <div class="footer-links">
                             <h3>Quick Links</h3>
                             <ul>
-                                <li><a class="site-link" href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+                                <li><a class="site-link" href="../index.html"><i class="fas fa-angle-right"></i> Home</a></li>
                                 <li><a class="site-link" href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
                                 <li><a class="site-link" href="leadership.html"><i class="fas fa-angle-right"></i> Leadership</a></li>
                                 <li><a class="site-link" href="beliefs.html"><i class="fas fa-angle-right"></i> Beliefs</a></li>
@@ -198,33 +199,28 @@
                                 <li><a class="site-link" href="events.html"><i class="fas fa-angle-right"></i> Events</a></li>
                                 <li><a class="site-link" href="resources.html"><i class="fas fa-angle-right"></i> Resources</a></li>
                                 <li><a class="site-link" href="contact.html"><i class="fas fa-angle-right"></i> Contact</a></li>
-                                <li><a class="site-link" href="donate.html"><i class="fas fa-angle-right"></i> Giving</a></li>
                             </ul>
                         </div>
                         <div class="footer-social">
                             <h3>Connect With Us</h3>
-        <div class="social-links">
-                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="footer-bottom">
-                        <p>&copy; <span id="current-year"></span> South Kenya Conference. All rights reserved.</p>
+                        <p>&copy; 2024 South Kenya Conference. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
         </div>
-
-        <!-- Side Section -->
-        <div class="side-section">
-            <div class="logo">
-                <img src="https://i.ibb.co/RkZ1g2wv/sda-logo.png" alt="South Kenya Conference SDA Logo">
-            </div>
-        </div>
     </div>
 
-    <script src="../js/script.js"></script>
+    <!-- Scripts -->
+    <script src="../js/department.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
