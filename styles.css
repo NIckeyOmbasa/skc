@@ -1393,102 +1393,134 @@ footer {
 /* Daily Verse Section */
 .daily-verse {
     padding: 2rem 0;
-    background-color: #f8f9fa;
-    position: relative;
-    z-index: 1;
+    background-color: var(--background-light);
 }
 
-.verse-container {
-    align-items: center;
-    /* max-width: 800px; */
-    margin: 0;
-    text-align: center;
-    padding: 1rem;
-    background: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.daily-verse .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.verse-container h2 {
-    color: #1A3C34;
+.verse-container,
+.quote-container {
+    background-color: var(--background-white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.verse-container:hover,
+.quote-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.verse-container h2,
+.quote-container h2 {
+    color: var(--primary-dark);
     margin-bottom: 1.5rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-.verse-content {
-    margin-bottom: 2rem;
+.verse-content,
+.quote-content {
+    margin-bottom: 1.5rem;
 }
 
-.verse-text {
-    font-size: 1.4rem;
+.verse-text,
+.quote-text {
+    font-size: 1.1rem;
     line-height: 1.6;
-    color: #333;
+    color: var(--text-dark);
     margin-bottom: 1rem;
     font-style: italic;
 }
 
-.verse-reference {
-    font-size: 1.1rem;
-    color: #1A3C34;
-    font-weight: 600;
+.verse-reference,
+.quote-source {
+    color: var(--primary-dark);
+    font-weight: 500;
+    text-align: right;
 }
 
-.verse-actions {
+.verse-actions,
+.quote-actions {
     display: flex;
+    gap: 10px;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 20px;
 }
 
-.verse-btn {
-    padding: 0.8rem 1.5rem;
+.verse-btn, .quote-btn {
+    background: var(--primary-dark);
+    color: var(--text-white);
     border: none;
-    border-radius: 5px;
-    background-color: #1A3C34;
-    color: #FFFFFF;
+    padding: 0;
+    border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    position: relative;
 }
 
-.verse-btn:hover {
-    background-color: #2a5c54;
-    transform: translateY(-2px);
+.verse-btn:hover, .quote-btn:hover {
+    width: auto;
+    padding: 8px 16px;
+    background: var(--primary-dark);
 }
 
-.verse-btn:active {
-    transform: translateY(0);
+.verse-btn i, .quote-btn i {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
 }
 
-.verse-btn i {
-    font-size: 1.1rem;
+.verse-btn:hover i, .quote-btn:hover i {
+    position: static;
+    transform: none;
 }
 
-.verse-update-time {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 1rem;
+.verse-btn .btn-text, .quote-btn .btn-text {
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    margin-left: 24px;
 }
 
+.verse-btn:hover .btn-text, .quote-btn:hover .btn-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .verse-text {
-        font-size: 1.2rem;
+    .daily-verse .container {
+        grid-template-columns: 1fr;
     }
     
-    .verse-reference {
-        font-size: 1rem;
-    }
-    
-    .verse-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .verse-btn {
-        width: 100%;
-        justify-content: center;
+    .verse-container,
+    .quote-container {
+        padding: 1.5rem;
     }
 }
 

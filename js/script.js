@@ -150,7 +150,200 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
                 reference: "John 3:16"
+            },
+            {
+                text: "The Lord is my light and my salvation—whom shall I fear? The Lord is the stronghold of my life—of whom shall I be afraid?",
+                reference: "Psalm 27:1"
+            },
+            {
+                text: "Cast all your anxiety on him because he cares for you.",
+                reference: "1 Peter 5:7"
+            },
+            {
+                text: "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+                reference: "Philippians 4:6"
+            },
+            {
+                text: "Come to me, all you who are weary and burdened, and I will give you rest.",
+                reference: "Matthew 11:28"
+            },
+            {
+                text: "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+                reference: "Psalm 34:18"
+            },
+            {
+                text: "God is our refuge and strength, an ever-present help in trouble.",
+                reference: "Psalm 46:1"
+            },
+            {
+                text: "I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world.",
+                reference: "John 16:33"
+            },
+            {
+                text: "Trust in the Lord forever, for the Lord, the Lord himself, is the Rock eternal.",
+                reference: "Isaiah 26:4"
+            },
+            {
+                text: "The name of the Lord is a fortified tower; the righteous run to it and are safe.",
+                reference: "Proverbs 18:10"
+            },
+            {
+                text: "He gives strength to the weary and increases the power of the weak.",
+                reference: "Isaiah 40:29"
+            },
+            {
+                text: "My flesh and my heart may fail, but God is the strength of my heart and my portion forever.",
+                reference: "Psalm 73:26"
+            },
+            {
+                text: "The Lord will fight for you; you need only to be still.",
+                reference: "Exodus 14:14"
+            },
+            {
+                text: "For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.",
+                reference: "2 Timothy 1:7"
+            },
+            {
+                text: "The righteous cry out, and the Lord hears them; he delivers them from all their troubles.",
+                reference: "Psalm 34:17"
+            },
+            {
+                text: "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+                reference: "Isaiah 26:3"
+            },
+            {
+                text: "The Lord is good, a refuge in times of trouble. He cares for those who trust in him.",
+                reference: "Nahum 1:7"
+            },
+            {
+                text: "I sought the Lord, and he answered me; he delivered me from all my fears.",
+                reference: "Psalm 34:4"
+            },
+            {
+                text: "Be still, and know that I am God.",
+                reference: "Psalm 46:10"
+            },
+            {
+                text: "The Lord your God is with you, the Mighty Warrior who saves.",
+                reference: "Zephaniah 3:17"
+            },
+            {
+                text: "Commit to the Lord whatever you do, and he will establish your plans.",
+                reference: "Proverbs 16:3"
+            },
+            {
+                text: "Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.",
+                reference: "Galatians 6:9"
+            },
+            {
+                text: "The Lord is my strength and my shield; my heart trusts in him, and he helps me.",
+                reference: "Psalm 28:7"
+            },
+            {
+                text: "I will never leave you nor forsake you.",
+                reference: "Hebrews 13:5"
+            },
+            {
+                text: "The Lord gives strength to his people; the Lord blesses his people with peace.",
+                reference: "Psalm 29:11"
+            },  
+            {
+                text: "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge.",
+                reference: "Psalm 18:2"
+            },
+            {
+                text: "He will cover you with his feathers, and under his wings you will find refuge; his faithfulness will be your shield and rampart.",
+                reference: "Psalm 91:4"
+            },
+            {
+                text: "But seek first his kingdom and his righteousness, and all these things will be given to you as well.",
+                reference: "Matthew 6:33"
+            },
+            {
+                text: "The Lord is gracious and compassionate, slow to anger and rich in love.",
+                reference: "Psalm 145:8"
+            },
+            {
+                text: "The Lord is near to all who call on him, to all who call on him in truth.",
+                reference: "Psalm 145:18"
+            },
+            {
+                text: "Blessed is the one who perseveres under trial because, having stood the test, that person will receive the crown of life that the Lord has promised to those who love him.",
+                reference: "James 1:12"
+            },
+            {
+                text: "The Lord is my portion; therefore I will wait for him.",
+                reference: "Lamentations 3:24"
+            },
+            {
+                text: "The Lord is good to those whose hope is in him, to the one who seeks him.",
+                reference: "Lamentations 3:25"
+            },
+            {
+                text: "The Lord is my strength and my song; he has become my salvation.",
+                reference: "Exodus 15:2"
+            },
+            {
+                text: "The Lord is my shepherd; I shall not want.",
+                reference: "Psalm 23:1"
+            },
+            {
+                text: "The Lord is my refuge and my fortress, my God, in whom I trust.",
+                reference: "Psalm 91:2"
+            },
+            {
+                text: "The Lord is my helper; I will not be afraid. What can mere mortals do to me?",
+                reference: "Hebrews 13:6"
+            },
+            {
+                text: "The Lord is my light and my salvation—whom shall I fear?",
+                reference: "Psalm 27:1"
+            },
+            {
+                text: "The Lord is my strength and my shield; my heart trusts in him, and he helps me.",
+                reference: "Psalm 28:7"
+            },
+            {
+                text: "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge.",
+                reference: "Psalm 18:2"
+            },
+            {
+                text: "The Lord is my portion; therefore I will wait for him.",
+                reference: "Lamentations 3:24"
+            },
+            {
+                text: "The Lord is good to those whose hope is in him, to the one who seeks him.",
+                reference: "Lamentations 3:25"
+            },
+            {
+                text: "The Lord is my strength and my song; he has become my salvation.",
+                reference: "Exodus 15:2"
+            },
+            {
+                text: "The Lord is my shepherd; I shall not want.",
+                reference: "Psalm 23:1"
+            },
+            {
+                text: "The Lord is my refuge and my fortress, my God, in whom I trust.",
+                reference: "Psalm 91:2"
+            },
+            {
+                text: "The Lord is my helper; I will not be afraid. What can mere mortals do to me?",
+                reference: "Hebrews 13:6"
+            },
+            {
+                text: "The Lord is my light and my salvation—whom shall I fear?",
+                reference: "Psalm 27:1"
+            },
+            {
+                text: "The Lord is my strength and my shield; my heart trusts in him, and he helps me.",
+                reference: "Psalm 28:7"
+            },
+            {
+                text: "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge.",
+                reference: "Psalm 18:2"
             }
+                
         ];
 
         // Function to get today's verse
