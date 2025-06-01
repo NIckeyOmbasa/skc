@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const indicators = carousel.querySelectorAll('.indicator');
     const prevButton = carousel.querySelector('.prev');
     const nextButton = carousel.querySelector('.next');
-    let currentIndex = 0;
+    let carouselIndex = 0;
     let interval;
 
     function showSlide(index) {
@@ -214,11 +214,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add active class to current item and indicator
         items[index].classList.add('active');
         indicators[index].classList.add('active');
-        currentIndex = index;
+        carouselIndex = index;
     }
 
     function nextSlide() {
-        let nextIndex = currentIndex + 1;
+        let nextIndex = carouselIndex + 1;
         if (nextIndex >= items.length) {
             nextIndex = 0;
         }
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function prevSlide() {
-        let prevIndex = currentIndex - 1;
+        let prevIndex = carouselIndex - 1;
         if (prevIndex < 0) {
             prevIndex = items.length - 1;
         }
@@ -292,111 +292,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check on scroll
     window.addEventListener('scroll', checkScroll);
-
-    // News Popup Functionality
-    const newsData = {
-        1: {
-            title: "Youth Conference Success",
-            date: "March 15, 2024",
-            image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800",
-            description: `The South Kenya Conference Youth Conference was a resounding success, with over 500 young people gathering for a week of spiritual growth and fellowship. The event featured inspiring speakers, engaging workshops, and meaningful worship sessions.\n
-
-Key highlights of the conference included:\n
-• Dynamic worship services led by the youth choir\n
-• Interactive workshops on leadership and spiritual growth\n
-• Community service projects in the local area\n
-• Evening social activities and networking opportunities\n
-
-The conference theme "Rise Up" resonated with participants, encouraging them to take active roles in their churches and communities. Many young people made decisions to deepen their faith and commit to serving others.\n
-
-"We are thrilled with the turnout and the impact this conference has had on our youth," said the Youth Director. "The energy and enthusiasm shown by the participants was truly inspiring."`
-        },
-        2: {
-            title: "Community Health Fair",
-            date: "March 10, 2024",
-            image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
-            description: `The annual Community Health Fair brought together healthcare professionals and community members for a day of wellness education and free health screenings. The event, organized by our Health Ministries Department, served over 300 community members.
-
-Services provided included:
-• Blood pressure and blood sugar screenings
-• BMI measurements and nutritional counseling
-• Dental check-ups and oral health education
-• Mental health awareness sessions
-• Exercise demonstrations and fitness assessments
-
-Local healthcare providers volunteered their time and expertise, making this event possible. The fair also featured cooking demonstrations of healthy recipes and information about preventive healthcare practices.
-
-"This event demonstrates our commitment to holistic health ministry," said the Health Ministries Director. "We believe in caring for the whole person - body, mind, and spirit."`
-        },
-        3: {
-            title: "New Church Plant",
-            date: "March 5, 2024",
-            image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800",
-            description: `The South Kenya Conference celebrated the opening of its newest congregation in a growing community. The church plant represents a significant step in our mission to reach more people with the gospel message.
-
-The new church features:
-• Modern worship facilities
-• Children's ministry spaces
-• Community meeting rooms
-• Outdoor gathering areas
-
-The planting process included:
-• Community needs assessment
-• Evangelistic meetings
-• Leadership training
-• Building construction and dedication
-
-"We are excited to see how God will use this new church to impact the community," said the Conference President. "This is just the beginning of what we believe will be a vibrant ministry center."`
-        }
-    };
-
-    const newsPopup = document.querySelector('.news-popup');
-    const popupContent = document.querySelector('.news-popup-content');
-    const closeButton = document.querySelector('.news-popup-close');
-    const readMoreLinks = document.querySelectorAll('.read-more');
-
-    // Function to open popup
-    function openPopup(newsId) {
-        const news = newsData[newsId];
-        if (news) {
-            document.querySelector('.news-popup-image').src = news.image;
-            document.querySelector('.news-popup-image').alt = news.title;
-            document.querySelector('.news-popup-date').textContent = news.date;
-            document.querySelector('.news-popup-title').textContent = news.title;
-            document.querySelector('.news-popup-description').textContent = news.description;
-            newsPopup.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        }
-    }
-
-    // Function to close popup
-    function closePopup() {
-        newsPopup.classList.remove('active');
-        document.body.style.overflow = ''; // Restore background scrolling
-    }
-
-    // Event listeners
-    readMoreLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const newsId = link.getAttribute('data-news-id');
-            openPopup(newsId);
-        });
-    });
-
-    closeButton.addEventListener('click', closePopup);
-
-    // Close popup when clicking outside
-    newsPopup.addEventListener('click', (e) => {
-        if (e.target === newsPopup) {
-            closePopup();
-        }
-    });
-
-    // Close popup with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && newsPopup.classList.contains('active')) {
-            closePopup();
-        }
-    });
 });

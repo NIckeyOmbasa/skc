@@ -10,11 +10,12 @@
     <link href="https://fonts.cdnfonts.com/css/gilam" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <header>
         <nav class="navbar">
             <div class="logo">
                 <a href="../index.html">
-                    <span class="logo-text">South Kenya Conference<br>Seventh-day Adventist Church</span>
+                    <span class="logo-text">Seventh-day Adventist Church<br><span class="logo-conference">SOUTH KENYA CONFERENCE</span></span>
                 </a>
             </div>
             <ul class="nav-links">
@@ -25,7 +26,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="leadership.html">Leadership</a></li>
                         <li><a href="beliefs.html">Beliefs</a></li>
-                        <li><a href="ministries.html">Ministries</a></li>
+                        <li><a href="ministries.html">Departments</a></li>
                         <li><a href="churches.html">Churches</a></li>
                     </ul>
                 </li>
@@ -56,9 +57,16 @@
                 <section class="donate-content">
                     <h2>Give Online</h2>
                     <div class="grid">
+
+                        <div class="donate-info">
+                            <h3>Why Give?</h3>
+                            <p>Your contributions support our churches, schools, health facilities, community outreach programs and Evangelism across South Kenya Conference.<br>You can give through: <br><strong>Paybill: 700201<br>Account No: 6622002948<strong></p>
+                            <p>We use secure payment processing to ensure your contribution is safe.</p>
+                        </div>
+                        
                         <div class="donate-form">
                             <form action="/donate" method="POST">
-                                <label for="amount">Donation Amount (KES)</label>
+                                <label for="amount">Amount (KES)</label>
                                 <input type="number" id="amount" name="amount" required>
                                 <label for="category">Purpose</label>
                                 <select id="category" name="category">
@@ -68,16 +76,16 @@
                                     <option value="development">Church Development</option>
                                     <option value="other">Other</option>
                                 </select>
+                                <div id="other-category-container" style="display: none;">
+                                    <label for="other-category">Please specify:</label>
+                                    <input type="text" id="category" name="category" placeholder="Enter category">
+                                </div>
                                 <label for="name">Name (Optional)</label>
                                 <input type="text" id="name" name="name">
-                                <button type="submit" class="btn">Donate Now</button>
+                                <button type="submit" class="btn">Support Now</button>
                             </form>
                         </div>
-                        <div class="donate-info">
-                            <h3>Why Give?</h3>
-                            <p>Your contributions support our churches, schools, health initiatives, and community outreach programs across South Kenya.</p>
-                            <p>We use secure payment processing to ensure your donation is safe.</p>
-                        </div>
+                        
                     </div>
                 </section>
             </main>
@@ -100,7 +108,7 @@
                                 <li><a class="site-link" href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
                                 <li><a class="site-link" href="leadership.html"><i class="fas fa-angle-right"></i> Leadership</a></li>
                                 <li><a class="site-link" href="beliefs.html"><i class="fas fa-angle-right"></i> Beliefs</a></li>
-                                <li><a class="site-link" href="ministries.html"><i class="fas fa-angle-right"></i> Ministries</a></li>
+                                <li><a class="site-link" href="ministries.html"><i class="fas fa-angle-right"></i> Departments</a></li>
                                 <li><a class="site-link" href="churches.html"><i class="fas fa-angle-right"></i> Churches</a></li>
                                 <li><a class="site-link" href="events.html"><i class="fas fa-angle-right"></i> Events</a></li>
                                 <li><a class="site-link" href="resources.html"><i class="fas fa-angle-right"></i> Resources</a></li>
@@ -118,7 +126,7 @@
                         </div>
                     </div>
                     <div class="footer-bottom">
-                        <p>&copy; <span id="current-year"></span> South Kenya Conference. All rights reserved.</p>
+                        <p>&copy; <span id="current-year"></span> South Kenya Conference of the Seventh-Day Adventist&reg; Church. All rights reserved.</p>
                     </div>
                 </div>
             </footer>
@@ -133,5 +141,22 @@
     </div>
 
     <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categorySelect = document.getElementById('category');
+            const otherCategoryContainer = document.getElementById('other-category-container');
+            const otherCategoryInput = document.getElementById('other-category');
+
+            categorySelect.addEventListener('change', function() {
+                if (this.value === 'other') {
+                    otherCategoryContainer.style.display = 'block';
+                    otherCategoryInput.setAttribute('required', 'required');
+                } else {
+                    otherCategoryContainer.style.display = 'none';
+                    otherCategoryInput.removeAttribute('required');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
