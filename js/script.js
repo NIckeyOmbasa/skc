@@ -1,3 +1,16 @@
+/* Add this to your JavaScript section or create a new script.js file */
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+});
+
 // Media Tabs Functionality
 function initializeTabs() {
     const tabButtons = document.querySelectorAll('.tab-btn');
@@ -89,189 +102,204 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Navbar Scroll Functionality
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+
     // Daily Verse Functionality
     const verseText = document.querySelector('.verse-text');
     const verseReference = document.querySelector('.verse-reference');
     const copyBtn = document.querySelector('.copy-btn');
     const shareBtn = document.querySelector('.share-btn');
 
-    // Array of verses
-    const verses = [
-        {
-            text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
-            reference: "Jeremiah 29:11"
-        },
-        {
-            text: "I can do all things through Christ who strengthens me.",
-            reference: "Philippians 4:13"
-        },
-        {
-            text: "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
-            reference: "Proverbs 3:5-6"
-        },
-        {
-            text: "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
-            reference: "Joshua 1:9"
-        },
-        {
-            text: "The Lord is my shepherd, I lack nothing.",
-            reference: "Psalm 23:1"
-        },
-        {
-            text: "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
-            reference: "Isaiah 40:31"
-        },
-        {
-            text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
-            reference: "John 3:16"
+    if (verseText && verseReference && copyBtn && shareBtn) {
+        // Array of verses
+        const verses = [
+            {
+                text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+                reference: "Jeremiah 29:11"
+            },
+            {
+                text: "I can do all things through Christ who strengthens me.",
+                reference: "Philippians 4:13"
+            },
+            {
+                text: "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+                reference: "Proverbs 3:5-6"
+            },
+            {
+                text: "Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+                reference: "Joshua 1:9"
+            },
+            {
+                text: "The Lord is my shepherd, I lack nothing.",
+                reference: "Psalm 23:1"
+            },
+            {
+                text: "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+                reference: "Isaiah 40:31"
+            },
+            {
+                text: "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+                reference: "John 3:16"
+            }
+        ];
+
+        // Function to get today's verse
+        function getTodaysVerse() {
+            const today = new Date();
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+            const verseIndex = dayOfYear % verses.length;
+            return verses[verseIndex];
         }
-    ];
 
-    // Function to get today's verse
-    function getTodaysVerse() {
-        const today = new Date();
-        const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
-        const verseIndex = dayOfYear % verses.length;
-        return verses[verseIndex];
-    }
+        // Function to update verse display
+        function updateVerse() {
+            const verse = getTodaysVerse();
+            verseText.textContent = verse.text;
+            verseReference.textContent = verse.reference;
+        }
 
-    // Function to update verse display
-    function updateVerse() {
-        const verse = getTodaysVerse();
-        verseText.textContent = verse.text;
-        verseReference.textContent = verse.reference;
-    }
+        // Function to copy verse to clipboard
+        function copyVerse() {
+            const text = `${verseText.textContent} - ${verseReference.textContent}`;
+            navigator.clipboard.writeText(text).then(() => {
+                // Show copy confirmation
+                const originalText = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalText;
+                }, 2000);
+            });
+        }
 
-    // Function to copy verse to clipboard
-    function copyVerse() {
-        const text = `${verseText.textContent} - ${verseReference.textContent}`;
-        navigator.clipboard.writeText(text).then(() => {
-            // Show copy confirmation
-            const originalText = copyBtn.innerHTML;
-            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        // Function to share verse
+        function shareVerse() {
+            const text = `${verseText.textContent} - ${verseReference.textContent}`;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Daily Verse',
+                    text: text
+                }).catch(console.error);
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                copyVerse();
+            }
+        }
+
+        // Initialize verse
+        updateVerse();
+
+        // Add event listeners
+        copyBtn.addEventListener('click', copyVerse);
+        shareBtn.addEventListener('click', shareVerse);
+
+        // Update verse at midnight
+        function updateVerseAtMidnight() {
+            const now = new Date();
+            const night = new Date(
+                now.getFullYear(),
+                now.getMonth(),
+                now.getDate() + 1, // tomorrow
+                0, 0, 0 // midnight
+            );
+            const msToMidnight = night.getTime() - now.getTime();
+
             setTimeout(() => {
-                copyBtn.innerHTML = originalText;
-            }, 2000);
-        });
-    }
-
-    // Function to share verse
-    function shareVerse() {
-        const text = `${verseText.textContent} - ${verseReference.textContent}`;
-        if (navigator.share) {
-            navigator.share({
-                title: 'Daily Verse',
-                text: text
-            }).catch(console.error);
-        } else {
-            // Fallback for browsers that don't support Web Share API
-            copyVerse();
+                updateVerse();
+                updateVerseAtMidnight(); // Schedule next update
+            }, msToMidnight);
         }
+
+        // Schedule first midnight update
+        updateVerseAtMidnight();
     }
 
-    // Initialize verse
-    updateVerse();
-
-    // Add event listeners
-    copyBtn.addEventListener('click', copyVerse);
-    shareBtn.addEventListener('click', shareVerse);
-
-    // Update verse at midnight
-    function updateVerseAtMidnight() {
-        const now = new Date();
-        const night = new Date(
-            now.getFullYear(),
-            now.getMonth(),
-            now.getDate() + 1, // tomorrow
-            0, 0, 0 // midnight
-        );
-        const msToMidnight = night.getTime() - now.getTime();
-
-        setTimeout(() => {
-            updateVerse();
-            updateVerseAtMidnight(); // Schedule next update
-        }, msToMidnight);
-    }
-
-    // Schedule first midnight update
-    updateVerseAtMidnight();
-
+    // Carousel Functionality
     const carousel = document.querySelector('.carousel');
-    if (!carousel) return;
+    if (carousel) {
+        const items = carousel.querySelectorAll('.carousel-item');
+        const indicators = carousel.querySelectorAll('.indicator');
+        const prevButton = carousel.querySelector('.prev');
+        const nextButton = carousel.querySelector('.next');
+        let carouselIndex = 0;
+        let interval;
 
-    const items = carousel.querySelectorAll('.carousel-item');
-    const indicators = carousel.querySelectorAll('.indicator');
-    const prevButton = carousel.querySelector('.prev');
-    const nextButton = carousel.querySelector('.next');
-    let carouselIndex = 0;
-    let interval;
+        function showSlide(index) {
+            // Remove active class from all items and indicators
+            items.forEach(item => item.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
 
-    function showSlide(index) {
-        // Remove active class from all items and indicators
-        items.forEach(item => item.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-
-        // Add active class to current item and indicator
-        items[index].classList.add('active');
-        indicators[index].classList.add('active');
-        carouselIndex = index;
-    }
-
-    function nextSlide() {
-        let nextIndex = carouselIndex + 1;
-        if (nextIndex >= items.length) {
-            nextIndex = 0;
+            // Add active class to current item and indicator
+            items[index].classList.add('active');
+            indicators[index].classList.add('active');
+            carouselIndex = index;
         }
-        showSlide(nextIndex);
-    }
 
-    function prevSlide() {
-        let prevIndex = carouselIndex - 1;
-        if (prevIndex < 0) {
-            prevIndex = items.length - 1;
+        function nextSlide() {
+            let nextIndex = carouselIndex + 1;
+            if (nextIndex >= items.length) {
+                nextIndex = 0;
+            }
+            showSlide(nextIndex);
         }
-        showSlide(prevIndex);
-    }
 
-    // Event listeners for controls
-    prevButton.addEventListener('click', () => {
-        clearInterval(interval);
-        prevSlide();
-        startAutoSlide();
-    });
+        function prevSlide() {
+            let prevIndex = carouselIndex - 1;
+            if (prevIndex < 0) {
+                prevIndex = items.length - 1;
+            }
+            showSlide(prevIndex);
+        }
 
-    nextButton.addEventListener('click', () => {
-        clearInterval(interval);
-        nextSlide();
-        startAutoSlide();
-    });
-
-    // Event listeners for indicators
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
+        // Event listeners for controls
+        prevButton.addEventListener('click', () => {
             clearInterval(interval);
-            showSlide(index);
+            prevSlide();
             startAutoSlide();
         });
-    });
 
-    // Auto slide function
-    function startAutoSlide() {
-        interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
-    }
+        nextButton.addEventListener('click', () => {
+            clearInterval(interval);
+            nextSlide();
+            startAutoSlide();
+        });
 
-    // Start auto sliding
-    startAutoSlide();
+        // Event listeners for indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                clearInterval(interval);
+                showSlide(index);
+                startAutoSlide();
+            });
+        });
 
-    // Pause auto sliding when hovering over carousel
-    carousel.addEventListener('mouseenter', () => {
-        clearInterval(interval);
-    });
+        // Auto slide function
+        function startAutoSlide() {
+            interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
 
-    // Resume auto sliding when mouse leaves carousel
-    carousel.addEventListener('mouseleave', () => {
+        // Start auto sliding
         startAutoSlide();
-    });
+
+        // Pause auto sliding when hovering over carousel
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(interval);
+        });
+
+        // Resume auto sliding when mouse leaves carousel
+        carousel.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+    }
 
     // Scroll Animation
     const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
@@ -292,4 +320,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check on scroll
     window.addEventListener('scroll', checkScroll);
+
+    // Add scroll event listener for side section
+    window.addEventListener('scroll', function() {
+        const sideSection = document.querySelector('.side-section');
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
+        
+        // Calculate the gradient stop position based on scroll percentage
+        // Use a smoother easing function
+        const easedPercentage = Math.min(scrollPercentage, 100);
+        const gradientStop = Math.pow(easedPercentage / 100, 0.5) * 100;
+        
+        // Create the dynamic gradient with smoother transition
+        sideSection.style.background = `linear-gradient(to bottom, #1A3C34 ${100 - gradientStop}%, #FFFFFF ${gradientStop}%)`;
+    });
+
+    // Update height on window resize
+    window.addEventListener('resize', function() {
+        const sideSection = document.querySelector('.side-section');
+        if (sideSection.classList.contains('scrolled')) {
+            const bodyHeight = document.body.scrollHeight;
+            sideSection.style.height = bodyHeight + 'px';
+        }
+    });
 });

@@ -149,4 +149,4 @@ For support, please contact:
 
 ---
 
-*This project is maintained by the South Kenya Conference of the Seventh-Day Adventist Church.*
+*This project is maintained by the South Kenya Conference of the Seventh-Day Adventist Church.* 

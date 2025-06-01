@@ -35,6 +35,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .container {
@@ -44,158 +45,180 @@ body {
 }
 
 /* Navigation */
-header {
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 90%;
-    z-index: 1000;
-    margin-bottom: 1px;
-    background-color: #1A3C34;
-}
-
-.navbar {
-    background-color: #1A3C34;
-    color: #FFFFFF;
+    background-color: white;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
-.navbar::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+.navbar.scrolled {
+    background-color: var(--primary-color);
+    padding: 0.5rem 2rem;
 }
 
-.navbar .logo {
-    display: flex;
-    align-items: center;
-    gap: 0;
+header {
+    width: 90%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    margin-top: 80px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container {
+    width: 90%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 90%;
+        padding: 1rem;
+    }
+    
+    .navbar.scrolled {
+        padding: 0.5rem 1rem;
+    }
+
+    header, .container {
+        width: 90%;
+        padding: 0 1rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header, .container {
+        width: 90%;
+        padding: 0 0.5rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
 .navbar .logo a {
+    color: #1A3C34;
+    text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.navbar .logo img {
-    max-width: 20%;
-    max-height: 20%;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
+.navbar.scrolled .logo a {
+    color: #FFFFFF;
 }
 
 .navbar .logo-text {
-    color: #FFFFFF;
-    font-size: 1rem;
-    font-weight: 200;
-    white-space: nowrap;
-    line-height: 1.2;
-    margin: 0;
-    padding: 0;
     font-family: 'Advent Sans', sans-serif;
-    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    line-height: 1.2;
 }
 
 .navbar .logo-conference {
-    color: #FFFFFF;
-    font-size: 0.9rem;
-    font-weight: 100;
-    white-space: nowrap;
-    line-height: 1.2;
-    margin: 0;
-    padding: 0;
-    /* font-family: 'Open Sans', sans-serif; */
-    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: block;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 .nav-links li {
-    margin-left: 2rem;
+    margin: 0 1rem;
 }
 
 .nav-links a {
-    color: #FFFFFF;
+    color: #1A3C34;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
     position: relative;
+    transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: #FFFFFF;
-    font-weight: 600;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-}
-
-.nav-links a:hover::after {
+.nav-links a:not(.btn-donate)::after {
     content: '';
     position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
+    bottom: 0;
+    left: 50%;
+    width: 0;
     height: 2px;
-    background-color: #FFFFFF;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-.nav-links a.active {
+.nav-links a:not(.btn-donate):hover::after,
+.nav-links a:not(.btn-donate).active::after {
+    width: 80%;
+}
+
+.nav-links a:not(.btn-donate):hover {
+    background-color: transparent;
+}
+
+.navbar.scrolled .nav-links a:not(.btn-donate):hover {
+    background-color: transparent;
+}
+
+.nav-links a:not(.btn-donate).active {
+    background-color: transparent;
+    color: #1A3C34;
+}
+
+.navbar.scrolled .nav-links a.active {
+    background-color: transparent;
     color: #FFFFFF;
-    font-weight: 600;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #FFFFFF;
 }
 
 .btn-donate {
-    background-color: transparent;
-    color: white;
+    /* background-color: transparent; */
+    color: #0F2A24;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
-    border: 1px solid white;
+    border-radius: 3px;
+    border: 1px solid #0F2A24;
     transition: all 0.3s ease;
 }
 
 .btn-donate:hover {
-    background-color: #800000;
-    color: white;
+    background-color: #0F2A24;
+    color: #fff;
     text-decoration: none;
-    border-color: #800000;
+    border-color: #0F2A24;
 }
 
 .btn-donate.active {
     background-color: #800000;
-    color: white;
-    border: 2px solid #800000;
+    color: #fff;
+    /* border: 2px solid #800000; */
     text-decoration: none;
 }
 
 .btn-donate.active:hover {
     background-color: #800000;
     border-color: #800000;
+    color: fff;
 }
 
 .hamburger {
@@ -216,8 +239,8 @@ header {
     display: flex;
     flex: 1;
     position: relative;
-    margin-top: 80px; /* Add margin equal to header height */
-    min-height: calc(100vh - 80px); /* Subtract header height from viewport height */
+    margin-top: 40px; /*Add margin equal to header height*/
+    /* min-height: calc(100vh - 80px); Subtract header height from viewport height */
 }
 
 /* Main Content Area */
@@ -251,40 +274,46 @@ header {
 
 /* Side Section */
 .side-section {
-    width: 10%;
-    background: linear-gradient(to bottom, #1A3C34, #808080, #FFFFFF);
+    width: 10vw;
+    background: #1A3C34;
     position: fixed;
     right: 0;
-    top: 0; /* Start from the very top */
-    height: 100vh; /* Full viewport height */
+    top: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem 1rem;
-    z-index: 99;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    margin: 0;
+    transition: background 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.side-section:hover {
-    background: #1A3C34;
+.side-section.scrolled {
+    background: linear-gradient(to bottom, #1A3C34, #FFFFFF);
+    height: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
 .side-section .logo {
     position: sticky;
     top: 2rem;
     width: 100%;
-    max-width: 120px;
+    max-width: 150px;
     margin: 0 auto;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem;
+    background: transparent;
     border-radius: 50%;
     transition: all 0.3s ease;
-    margin-top: 5px; /* Reduced from 80px to shift logo upwards */
+    margin-top: 5px;
 }
 
 .side-section:hover .logo {
-    background: rgba(255, 255, 255, 0.2);
+    background: transparent;
     transform: scale(1.05);
 }
 
@@ -304,8 +333,8 @@ header {
     }
 
     .side-section .logo {
-        max-width: 100%;
-        padding: 0.5rem;
+        max-width: 120px;
+        padding: 1rem;
         margin-top: 100px;
     }
 }
@@ -317,8 +346,8 @@ header {
     }
 
     .side-section .logo {
-        max-width: 100%;
-        padding: 0.25rem;
+        max-width: 100px;
+        padding: 0.8rem;
     }
 }
 
@@ -398,8 +427,8 @@ header {
     height: 100vh;
     overflow: hidden;
     background-color: #1A3C34;
-    margin-top: -80px;
-    padding-top: 80px;
+    margin-top: -85px;
+    /* padding-top: 80px; */
 }
 
 .hero-carousel .carousel {
@@ -2111,12 +2140,17 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    flex-wrap: nowrap;
 }
 
 .events-header h1 {
     color: #800000;
     font-size: 2.5rem;
     margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
 }
 
 .month-filter select {
@@ -2273,6 +2307,7 @@ footer {
 
     .events-header h1 {
         font-size: 2rem;
+        width: 100%;
     }
 
     .month-filter select {
@@ -3605,3 +3640,32 @@ html {
         transform: translateY(0);
     }
 }
+
+.navbar.scrolled .nav-links a:not(.btn-donate) {
+    color: #FFFFFF;
+}
+
+.navbar.scrolled .nav-links a:not(.btn-donate):hover {
+    background-color: transparent;
+}
+
+.navbar.scrolled .nav-links a:not(.btn-donate).active {
+    background-color: transparent;
+    color: #FFFFFF;
+}
+
+.navbar.scrolled .nav-links a:not(.btn-donate)::after {
+    background-color: #FFFFFF;
+}
+
+.navbar.scrolled .btn-donate {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.navbar.scrolled .btn-donate:hover {
+    background-color: #FFFFFF;
+    color: #0F2A24;
+    border-color: #FFFFFF;
+}
+
