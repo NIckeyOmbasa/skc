@@ -1885,6 +1885,7 @@ footer {
 }
 
 .director-card p {
+    text-align: left;
     color: #8B0000;
     font-size: 1rem;
     margin-bottom: 1.5rem;
