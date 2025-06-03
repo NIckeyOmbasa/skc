@@ -21,7 +21,7 @@
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="about.html" class="dropdown-toggle">About Us</a>
+                    <a href="about.html" class="dropdown-toggle">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="leadership.html">Leadership</a></li>
@@ -50,125 +50,98 @@
                 <section class="media-section">
                     <!-- Media Tabs -->
                     <div class="media-tabs">
-                        <button class="tab-btn active" data-tab="gallery"><span>Gallery</span></button>
-                        <button class="tab-btn" data-tab="videos"><span>Videos</span></button>
-                        <button class="tab-btn" data-tab="livestream"><span>Live Stream</span></button>
-                        <button class="tab-btn mobile-only" data-scroll="resources-section"><span>Downloads</span></button>
+                        <button class="media-tab active" data-tab="gallery-content">
+                            <i class="fas fa-images"></i>
+                            <span>Gallery</span>
+                        </button>
+                        <button class="media-tab" data-tab="videos-content">
+                            <i class="fas fa-video"></i>
+                            <span>Videos</span>
+                        </button>
+                        <button class="media-tab" data-tab="livestream-content">
+                            <i class="fas fa-broadcast-tower"></i>
+                            <span>Live Stream</span>
+                        </button>
                     </div>
 
                     <!-- Tab Content -->
-                    <div class="tab-content">
-                        <!-- Photo Gallery Tab -->
-                        <div class="tab-pane active" id="gallery">
-                            <div class="gallery-section">
-                                <div class="gallery-grid">
-                                    <div class="gallery-item">
-                                        <img src="https://i.ibb.co/gb6F0jh2/skchq.jpg?w=500" alt="SKC HQ">
-                                        <div class="gallery-overlay">
-                                            <h3>SKC HQs</h3>
-                                            <p>Located at Nyanchwa</p>
-                                        </div>
-                                    </div>
-                                    <div class="gallery-item">
-                                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500" alt="Youth Conference">
-                                        <div class="gallery-overlay">
-                                            <h3>Youth Conference</h3>
-                                            <p>Annual Gathering</p>
-                                        </div>
-                                    </div>
-                                    <div class="gallery-item">
-                                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500" alt="Community Outreach">
-                                        <div class="gallery-overlay">
-                                            <h3>Community Outreach</h3>
-                                            <p>Health Ministry</p>
-                                        </div>
-                                    </div>
-                                    <div class="gallery-item">
-                                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500" alt="Music Ministry">
-                                        <div class="gallery-overlay">
-                                            <h3>Music Ministry</h3>
-                                            <p>Choir Performance</p>
-                                        </div>
-                                    </div>
+                    <div class="media-content active" id="gallery-content">
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://i.ibb.co/gb6F0jh2/skchq.jpg?w=500" alt="SKC HQ">
+                                <div class="gallery-overlay">
+                                    <h3>SKC HQs</h3>
+                                    <p>Located at Nyanchwa</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500" alt="Youth Conference">
+                                <div class="gallery-overlay">
+                                    <h3>Youth Conference</h3>
+                                    <p>Annual Gathering</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500" alt="Community Outreach">
+                                <div class="gallery-overlay">
+                                    <h3>Community Outreach</h3>
+                                    <p>Health Ministry</p>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500" alt="Music Ministry">
+                                <div class="gallery-overlay">
+                                    <h3>Music Ministry</h3>
+                                    <p>Choir Performance</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Live Stream Tab -->
-                        <div class="tab-pane" id="livestream">
-                            <div class="live-stream-section">
-                                <div class="live-stream-container">
-                                    <div id="live-stream-placeholder" class="live-stream-placeholder">
-                                        <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800" alt="Live Stream Offline">
-                                        <div class="placeholder-overlay">
-                                            <h3>Live Stream Offline</h3>
-                                            <p>Check back later for live services and events</p>
-                                        </div>
-                                    </div>
-                                    <div id="live-stream-player" class="live-stream-player" style="display: none;">
-                                        <iframe id="youtube-embed" width="100%" height="450" frameborder="0" allowfullscreen></iframe>
-                                    </div>
+                    <div class="media-content" id="videos-content">
+                        <div class="videos-grid">
+                            <div class="video-card">
+                                <div class="video-embed">
+                                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/sslIhAA5aGU?si=qNmUW7nCdiiwKSAf" title="Youth Conference" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="video-info">
+                                    <h3>Youth Congress 2024</h3>
+                                    <p>Annual youth Congress held at Kisii School</p>
+                                </div>
+                            </div>
+                            <div class="video-card">
+                                <div class="video-embed">
+                                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/_1RLCQbMJe8?si=6ugpAoAoAuGEtfRu" title="Community Outreach" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="video-info">
+                                    <h3>Master Guide Investiture</h3>
+                                    <p>2024 Master Guide investiture ceremony at Kisii Central Church</p>
+                                </div>
+                            </div>
+                            <div class="video-card">
+                                <div class="video-embed">
+                                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/gWJ0z6IKanY" title="South Kenya Conference" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="video-info">
+                                    <h3>South Kenya Conference</h3>
+                                    <p>Welcome to our conference</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Videos Tab -->
-                        <div class="tab-pane" id="videos">
-                            <div class="videos-section">
-                                <div class="videos-grid">
-                                    
-                                    <div class="video-card">
-                                        <div class="video-embed">
-                                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/sslIhAA5aGU?si=qNmUW7nCdiiwKSAf" title="Youth Conference" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <div class="video-info">
-                                            <h3>Youth Congress 2024</h3>
-                                            <p>Annual youth Congress held at Kisii School</p>
-                                        </div>
-                                    </div>
-                                    <div class="video-card">
-                                        <div class="video-embed">
-                                            <iframe width="100%" height="200" src="https://www.youtube.com/embed/_1RLCQbMJe8?si=6ugpAoAoAuGEtfRu" title="Community Outreach" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                        <div class="video-info">
-                                            <h3>Master Guide Investiture</h3>
-                                            <p>2024 Master Guide investiture ceremony at Kisii Central Church</p>
-                                        </div>
-                                        <div class="video-card">
-                                            <div class="video-embed">
-                                                <iframe width="100%" height="200" src="https://www.youtube.com/embed/gWJ0z6IKanY" title="South Kenya Conference" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                            </div>
-                                            <div class="video-info">
-                                                <h3>South Kenya Conference</h3>
-                                                <p>Welcome to our conference</p>
-                                            </div>
-                                        </div>
+                    <div class="media-content" id="livestream-content">
+                        <div class="live-stream-section">
+                            <div class="live-stream-container">
+                                <div id="live-stream-placeholder" class="live-stream-placeholder">
+                                    <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800" alt="Live Stream Offline">
+                                    <div class="placeholder-overlay">
+                                        <h3>Live Stream Offline</h3>
+                                        <p>Check back later for live services and events</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <!-- Downloads Tab -->
-                        <div class="tab-pane" id="downloads">
-                            <div class="resources-section">
-                                <h2>Downloadable Resources</h2>
-                                <div class="resources-list">
-                                    <div class="resource-item">
-                                        <span class="resource-name">Church Bulletin</span>
-                                        <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
-                                    </div>
-                                    <div class="resource-item">
-                                        <span class="resource-name">Weekly Newsletter</span>
-                                        <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
-                                    </div>
-                                    <div class="resource-item">
-                                        <span class="resource-name">Sermon Notes</span>
-                                        <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
-                                    </div>
-                                    <div class="resource-item">
-                                        <span class="resource-name">Event Calendar</span>
-                                        <a href="#" class="btn-download">Download <i class="fas fa-download"></i></a>
-                                    </div>
+                                <div id="live-stream-player" class="live-stream-player" style="display: none;">
+                                    <iframe id="youtube-embed" width="100%" height="450" frameborder="0" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>

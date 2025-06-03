@@ -21,7 +21,7 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li class="dropdown">
-                    <a href="pages/about.html" class="dropdown-toggle">About Us</a>
+                    <a href="pages/about.html" class="dropdown-toggle">About Us <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="pages/about.html">About Us</a></li>
                         <li><a href="pages/leadership.html">Leadership</a></li>
@@ -174,68 +174,17 @@
             </section>
 
             <!-- News Section -->
-            <section class="news">
+            <section class="news-section">
                 <div class="container">
-                    <h2 class="fade-in">Recent News</h2>
-                    <div class="news-grid">
-                        <div class="news-card" data-news="annual-conference">
-                            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=500" alt="Church Service">
-                            <div class="news-content">
-                                <span class="date">March 15, 2024</span>
-                                <h3>Annual Conference Session</h3>
-                                <p>Join us for our annual conference session where we'll discuss important matters and elect new leadership.</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                        <div class="news-card" data-news="youth-congress">
-                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500" alt="Youth Conference">
-                            <div class="news-content">
-                                <span class="date">March 10, 2024</span>
-                                <h3>Youth Congress 2024</h3>
-                                <p>Exciting youth congress planned with inspiring speakers, workshops, and fellowship activities.</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                        <div class="news-card" data-news="health-fair">
-                            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=500" alt="Community Outreach">
-                            <div class="news-content">
-                                <span class="date">March 5, 2024</span>
-                                <h3>Community Health Fair</h3>
-                                <p>Free health screenings and wellness workshops for the community at our upcoming health fair.</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                        <div class="news-card" data-news="evangelism">
-                            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500" alt="Music Ministry">
-                            <div class="news-content">
-                                <span class="date">February 28, 2024</span>
-                                <h3>Evangelism Series</h3>
-                                <p>Special training session for choir members and musicians to enhance worship experience.</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                        <div class="news-card" data-news="education">
-                            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=500" alt="Bible Study">
-                            <div class="news-content">
-                                <span class="date">February 20, 2024</span>
-                                <h3>Education Summit</h3>
-                                <p>New Bible study series starting this month focusing on the book of Revelation.</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                        <div class="news-card" data-news="music-festival">
-                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500" alt="Pathfinder Camp">
-                            <div class="news-content">
-                                <span class="date">February 15, 2024</span>
-                                <h3>Music Festival</h3>
-                                <p>Annual Pathfinder camp with exciting activities, leadership training, and spiritual growth.</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    <h2 class="section-title">Recent News & Events</h2>
+                    <div class="news-grid"></div>
                     <div class="news-navigation">
-                        <button class="news-nav-btn prev" id="news-prev"><i class="fas fa-chevron-left"></i></button>
-                        <button class="news-nav-btn next" id="news-next"><i class="fas fa-chevron-right"></i></button>
+                        <button id="news-prev" class="nav-btn" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="news-next" class="nav-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
             </section>
@@ -243,19 +192,38 @@
             <!-- News Popup -->
             <div class="news-popup">
                 <div class="news-popup-content">
-                    <button class="news-popup-close">&times;</button>
-                    <img src="" alt="" class="news-popup-image">
-                    <div class="news-popup-date"></div>
-                    <h2 class="news-popup-title"></h2>
-                    <p class="news-popup-description"></p>
-                    <div class="news-popup-details">
-                        <h3>Event Details</h3>
-                        <ul></ul>
+                    <button class="news-popup-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="news-popup-image-container">
+                        <img class="news-popup-image" src="" alt="">
                     </div>
-                    <div class="news-popup-info">
-                        <p><strong>Location:</strong> <span class="news-popup-location"></span></p>
-                        <p><strong>Time:</strong> <span class="news-popup-time"></span></p>
-                        <p><strong>Contact:</strong> <span class="news-popup-contact"></span></p>
+                    <div class="news-popup-details">
+                        <div class="news-popup-header">
+                            <span class="news-popup-date"></span>
+                            <span class="news-popup-category"></span>
+                        </div>
+                        <h3 class="news-popup-title"></h3>
+                        <div class="news-popup-description"></div>
+                        <div class="news-popup-highlights">
+                            <h4>Event Highlights</h4>
+                            <ul class="highlights-list"></ul>
+                        </div>
+                        <div class="news-popup-event-details">
+                            <h4>Event Details</h4>
+                            <div class="event-detail">
+                                <i class="far fa-calendar"></i>
+                                <span class="event-date-text"></span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="far fa-clock"></i>
+                                <span class="event-time-text"></span>
+                            </div>
+                            <div class="event-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="event-location-text"></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

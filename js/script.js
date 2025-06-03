@@ -12,32 +12,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Media Tabs Functionality
-function initializeTabs() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
+function initializeMediaTabs() {
+    const mediaTabs = document.querySelectorAll('.media-tab');
+    const mediaContents = document.querySelectorAll('.media-content');
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Check if this is a scroll button
-            const scrollTarget = button.getAttribute('data-scroll');
-            if (scrollTarget) {
-                const targetElement = document.getElementById(scrollTarget);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                    return;
-                }
-            }
+    mediaTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and contents
+            mediaTabs.forEach(t => t.classList.remove('active'));
+            mediaContents.forEach(c => c.classList.remove('active'));
 
-            // Regular tab functionality
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabPanes.forEach(pane => pane.classList.remove('active'));
+            // Add active class to clicked tab
+            tab.classList.add('active');
 
-            button.classList.add('active');
-            const tabId = button.getAttribute('data-tab');
-            const targetPane = document.getElementById(tabId);
-            if (targetPane) {
-                targetPane.classList.add('active');
-                targetPane.style.animation = 'fadeIn 0.3s ease forwards';
+            // Show corresponding content
+            const tabId = tab.getAttribute('data-tab');
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) {
+                targetContent.classList.add('active');
             }
         });
     });
@@ -45,7 +37,7 @@ function initializeTabs() {
 
 // Initialize tabs when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    initializeTabs();
+    initializeMediaTabs();
 
     // Set current year in footer
     var currentYearElem = document.getElementById('current-year');
@@ -539,4 +531,40 @@ document.addEventListener('DOMContentLoaded', () => {
             sideSection.style.height = bodyHeight + 'px';
         }
     });
+});
+
+// Statistics Counter Animation
+function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16); // 60fps
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(start).toLocaleString();
+        }
+    }, 16);
+}
+
+function initializeStatistics() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute('data-target'));
+                animateCounter(entry.target, target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(stat => observer.observe(stat));
+}
+
+// Initialize statistics when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeStatistics();
 });
