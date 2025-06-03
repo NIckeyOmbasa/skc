@@ -820,7 +820,7 @@ header {
 
 @media (max-width: 768px) {
     .hero-carousel {
-        height: 80vh;
+        height: 90vh;
     }
 
     .hero-carousel .carousel-caption h1 {
@@ -834,7 +834,7 @@ header {
 
 @media (max-width: 480px) {
     .hero-carousel {
-        height: 60vh;
+        height: 80vh;
     }
 }
 
