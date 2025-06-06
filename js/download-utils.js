@@ -17,14 +17,14 @@ function createImageWithText(text, source, type) {
             ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
             
             // Add semi-transparent overlay for better text readability
-            ctx.fillStyle = 'rgba(26, 60, 52, 0.85)';
+            ctx.fillStyle = 'rgba(26, 60, 52, 0.46)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
             // Add decorative elements
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
-            ctx.beginPath();
-            ctx.arc(canvas.width - 200, canvas.height - 200, 300, 0, Math.PI * 2);
-            ctx.fill();
+            // ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            // ctx.beginPath();
+            // ctx.arc(canvas.width - 200, canvas.height - 200, 300, 0, Math.PI * 2);
+            // ctx.fill();
             
             // Load the logo
             const logo = new Image();
@@ -35,22 +35,22 @@ function createImageWithText(text, source, type) {
                     // Draw logo (twice as big)
                     const logoSize = 120;
                     const logoX = (canvas.width - logoSize) / 2;
-                    ctx.drawImage(logo, logoX, 80, logoSize, logoSize);
+                    ctx.drawImage(logo, logoX, 120, logoSize, logoSize);
                     
                     // Draw conference name
                     ctx.fillStyle = '#FFFFFF';
                     ctx.font = 'bold 35px Advent Sans';
                     ctx.textAlign = 'center';
-                    ctx.fillText('South Kenya Conference', canvas.width / 2, 240);
+                    ctx.fillText('South Kenya Conference', canvas.width / 2, 280);
                     
                     // Draw the type (Today's Verse or Today's Quote)
                     ctx.font = 'bold 32px Open Sans';
-                    ctx.fillText(`Today's ${type}`, canvas.width / 2, 320);
+                    ctx.fillText(`Today's ${type}`, canvas.width / 2, 340);
                     
                     // Draw quote icon
                     const iconSize = 60;
                     const iconX = (canvas.width - iconSize) / 2;
-                    const iconY = 380;
+                    const iconY = 400;
                     
                     // Draw icon background
                     ctx.fillStyle = '#800000';
@@ -107,7 +107,7 @@ function createImageWithText(text, source, type) {
                     
                     // Configure text for verse/quote
                     const maxWidth = canvas.width - 200;
-                    const lineHeight = 60;
+                    const lineHeight = 50;
                     const words = text.split(' ');
                     let line = '';
                     let y = canvas.height / 2;
@@ -152,7 +152,7 @@ function createImageWithText(text, source, type) {
         };
         
         // Set the background image source
-        bgImage.src = 'https://i.ibb.co/SwCKHfNG/rm222-mind-33.jpg';
+        bgImage.src = '/assets/images/quotebg.jpeg';
     });
 }
 

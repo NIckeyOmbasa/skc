@@ -195,6 +195,20 @@ const departments = {
             "Social activities and events"
         ],
         scripture: "Let no one despise your youth, but be an example to the believers in word, in conduct, in love, in spirit, in faith, in purity. - 1 Timothy 4:12"
+    },
+    possibility: {
+        name: "Adventist Possibility Ministries",
+        logo: "../assets/images/AdventistPossibilityMinistries.jpg",
+        description: "Adventist Possibility Ministries is dedicated to empowering and supporting people with disabilities to serve God and their community. We work to create an inclusive environment where everyone can participate in the mission of the church.",
+        mission: "To empower people with disabilities to discover and use their God-given gifts in service to God and others.",
+        activities: [
+            "Disability awareness training",
+            "Inclusive worship services",
+            "Support groups",
+            "Accessibility improvements",
+            "Advocacy and education"
+        ],
+        scripture: "I can do all things through Christ who strengthens me. - Philippians 4:13"
     }
 };
 

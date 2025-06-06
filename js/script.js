@@ -408,83 +408,173 @@ document.addEventListener('DOMContentLoaded', () => {
         updateVerseAtMidnight();
     }
 
-    // Carousel Functionality
-    const carousel = document.querySelector('.carousel');
-    if (carousel) {
-        const items = carousel.querySelectorAll('.carousel-item');
-        const indicators = carousel.querySelectorAll('.indicator');
-        const prevButton = carousel.querySelector('.prev');
-        const nextButton = carousel.querySelector('.next');
-        let carouselIndex = 0;
-        let interval;
+    // Carousel Data
+    const carouselData = [
+        {
+            images: [
+                "https://i.ibb.co/gbPBbbMn/skc.jpg?w=1920"
+                
+            ],
+            title: "Welcome to South Kenya Conference",
+            description: "Join us in worship, fellowship, and service as we share God's love.",
+            link: "pages/about.html",
+            linkText: "Learn More"
+        },
+        {
+            images: [
+                "/assets/images/singing.jpg?w=1920",
+                "/assets/images/singing2.jpg?w=1920"
+            ],
+            title: "Experience Worship",
+            description: "Join our vibrant worship services every Sabbath.",
+            link: "pages/churches.html",
+            linkText: "Find a Church"
+        },
+        {
+            images: [
+                "https://i.ibb.co/B21xxJRv/volunteer-hero.jpg?w=1920",
+                "/assets/images/close-up-people-working-as-team.jpg?w=1920"
+            ],
+            title: "Serving Our Community",
+            description: "Making a difference through various outreach programs.",
+            link: "pages/ministries.html",
+            linkText: "Our Departments"
+        },
+        {
+            images: [
+                "https://i.ibb.co/VccKncCY/youth.jpg?w=1920",
+                "/assets/images/programmes.jpg?w=1920"
+            ],
+            title: "Diverse Programmes",
+            description: "Engaging all people in spiritual growth, evangelism and leadership.",
+            link: "pages/events.html",
+            linkText: "View Events"
+        }
+        ,
+        {
+            images: [
+                "/assets/images/bibleev.jpg?w=1920",
+                "/assets/images/bibleev.jpg?w=1920"
+            ],
+            title: "Bible Teachings",
+            description: "Be enlightened by the word of God, and grow in your faith.",
+            link: "pages/beliefs.html",
+            linkText: "View Bible Teachings"
+        }
+    ];
+
+    // Initialize Carousel
+    function initializeCarousel() {
+        const carouselInner = document.querySelector('.carousel-inner');
+        const indicatorsContainer = document.querySelector('.carousel-indicators');
+        let currentSlide = 0;
+        let autoSlideInterval;
+
+        // Create carousel items
+        carouselData.forEach((slide, index) => {
+            // Create carousel item
+            const carouselItem = document.createElement('div');
+            carouselItem.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+            
+            // Add images
+            slide.images.forEach(imgSrc => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                carouselItem.appendChild(img);
+            });
+
+            // Add caption
+            const caption = document.createElement('div');
+            caption.className = 'carousel-caption';
+            caption.innerHTML = `
+                <h1>${slide.title}</h1>
+                <p>${slide.description}</p>
+                <a href="${slide.link}" class="btn">${slide.linkText}</a>
+            `;
+            carouselItem.appendChild(caption);
+            carouselInner.appendChild(carouselItem);
+
+            // Create indicator
+            const indicator = document.createElement('button');
+            indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
+            indicator.setAttribute('aria-label', `Slide ${index + 1}`);
+            indicator.addEventListener('click', () => showSlide(index));
+            indicatorsContainer.appendChild(indicator);
+        });
+
+        // Get all slides and indicators
+        const slides = document.querySelectorAll('.carousel-item');
+        const indicators = document.querySelectorAll('.indicator');
+
+        // Navigation controls
+        const prevButton = document.querySelector('.carousel-control.prev');
+        const nextButton = document.querySelector('.carousel-control.next');
+
+        function getRandomImage(index) {
+            const slide = slides[index];
+            const images = slide.querySelectorAll('img');
+            return images[Math.floor(Math.random() * images.length)];
+        }
 
         function showSlide(index) {
-            // Remove active class from all items and indicators
-            items.forEach(item => item.classList.remove('active'));
-            indicators.forEach(indicator => indicator.classList.remove('active'));
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            });
+            indicators.forEach(ind => ind.classList.remove('active'));
 
-            // Add active class to current item and indicator
-            items[index].classList.add('active');
+            // Show selected slide
+            slides[index].classList.add('active');
+            slides[index].style.display = 'block';
             indicators[index].classList.add('active');
-            carouselIndex = index;
+
+            // Randomly select an image if multiple exist
+            const images = slides[index].querySelectorAll('img');
+            images.forEach(img => img.style.display = 'none');
+            getRandomImage(index).style.display = 'block';
+
+            currentSlide = index;
         }
 
         function nextSlide() {
-            let nextIndex = carouselIndex + 1;
-            if (nextIndex >= items.length) {
-                nextIndex = 0;
-            }
-            showSlide(nextIndex);
+            const next = (currentSlide + 1) % slides.length;
+            showSlide(next);
         }
 
         function prevSlide() {
-            let prevIndex = carouselIndex - 1;
-            if (prevIndex < 0) {
-                prevIndex = items.length - 1;
-            }
-            showSlide(prevIndex);
+            const prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
         }
 
         // Event listeners for controls
         prevButton.addEventListener('click', () => {
-            clearInterval(interval);
             prevSlide();
-            startAutoSlide();
+            resetAutoSlide();
         });
 
         nextButton.addEventListener('click', () => {
-            clearInterval(interval);
             nextSlide();
-            startAutoSlide();
+            resetAutoSlide();
         });
 
-        // Event listeners for indicators
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                clearInterval(interval);
-                showSlide(index);
-                startAutoSlide();
-            });
-        });
-
-        // Auto slide function
+        // Auto slide functionality
         function startAutoSlide() {
-            interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+            autoSlideInterval = setInterval(nextSlide, 4000); // Change slide every 5 seconds
         }
 
-        // Start auto sliding
-        startAutoSlide();
-
-        // Pause auto sliding when hovering over carousel
-        carousel.addEventListener('mouseenter', () => {
-            clearInterval(interval);
-        });
-
-        // Resume auto sliding when mouse leaves carousel
-        carousel.addEventListener('mouseleave', () => {
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
             startAutoSlide();
-        });
+        }
+
+        // Initialize first slide
+        showSlide(0);
+        startAutoSlide();
     }
+
+    // Initialize carousel when DOM is loaded
+    initializeCarousel();
 
     // Scroll Animation
     const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');

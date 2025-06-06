@@ -157,21 +157,24 @@ document.addEventListener('DOMContentLoaded', function() {
         quarter1: {
             january: [
                 {
-                    day: 15,
+                    startDay: 15,
+                    endDay: 15,
                     month: 'Jan',
                     name: 'Youth Conference',
                     department: 'Youth Department',
                     venue: 'Conference Center'
                 },
                 {
-                    day: 20,
+                    startDay: 20,
+                    endDay: 22,
                     month: 'Jan',
                     name: 'Health Seminar',
                     department: 'Health Department',
                     venue: 'Main Hall'
                 },
                 {
-                    day: 25,
+                    startDay: 25,
+                    endDay: 25,
                     month: 'Jan',
                     name: 'Music Workshop',
                     department: 'Music Department',
@@ -180,21 +183,24 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             february: [
                 {
-                    day: 5,
+                    startDay: 5,
+                    endDay: 7,
                     month: 'Feb',
                     name: 'Leadership Training',
                     department: 'Administration',
                     venue: 'Training Center'
                 },
                 {
-                    day: 12,
+                    startDay: 12,
+                    endDay: 12,
                     month: 'Feb',
                     name: 'Children\'s Ministry Workshop',
                     department: 'Children\'s Ministry',
                     venue: 'Youth Center'
                 },
                 {
-                    day: 19,
+                    startDay: 19,
+                    endDay: 21,
                     month: 'Feb',
                     name: 'Prayer Retreat',
                     department: 'Spiritual Development',
@@ -203,21 +209,24 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             march: [
                 {
-                    day: 10,
+                    startDay: 10,
+                    endDay: 10,
                     month: 'Mar',
                     name: 'Music Workshop',
                     department: 'Music Department',
                     venue: 'Chapel'
                 },
                 {
-                    day: 17,
+                    startDay: 17,
+                    endDay: 19,
                     month: 'Mar',
                     name: 'Youth Evangelism Training',
                     department: 'Youth Department',
                     venue: 'Conference Hall'
                 },
                 {
-                    day: 24,
+                    startDay: 24,
+                    endDay: 24,
                     month: 'Mar',
                     name: 'Health Ministry Seminar',
                     department: 'Health Department',
@@ -228,21 +237,24 @@ document.addEventListener('DOMContentLoaded', function() {
         quarter2: {
             april: [
                 {
-                    day: 5,
+                    startDay: 5,
+                    endDay: 7,
                     month: 'Apr',
                     name: 'Easter Convention',
                     department: 'Spiritual Development',
                     venue: 'Main Auditorium'
                 },
                 {
-                    day: 12,
+                    startDay: 12,
+                    endDay: 14,
                     month: 'Apr',
                     name: 'Youth Leadership Summit',
                     department: 'Youth Department',
                     venue: 'Conference Center'
                 },
                 {
-                    day: 19,
+                    startDay: 19,
+                    endDay: 19,
                     month: 'Apr',
                     name: 'Music Ministry Workshop',
                     department: 'Music Department',
@@ -251,190 +263,214 @@ document.addEventListener('DOMContentLoaded', function() {
             ],
             may: [
                 {
-                    day: 3,
+                    startDay: 3,
+                    endDay: 5,
                     month: 'May',
-                    name: 'Family Life Seminar',
-                    department: 'Family Life',
+                    name: 'Family Life Conference',
+                    department: 'Family Ministries',
+                    venue: 'Conference Center'
+                },
+                {
+                    startDay: 10,
+                    endDay: 10,
+                    month: 'May',
+                    name: 'Health Ministry Workshop',
+                    department: 'Health Department',
                     venue: 'Main Hall'
                 },
                 {
-                    day: 10,
+                    startDay: 17,
+                    endDay: 19,
                     month: 'May',
-                    name: 'Children\'s Day Celebration',
-                    department: 'Children\'s Ministry',
-                    venue: 'Youth Center'
-                },
-                {
-                    day: 17,
-                    month: 'May',
-                    name: 'Health Expo',
-                    department: 'Health Department',
-                    venue: 'Exhibition Hall'
+                    name: 'Youth Evangelism Training',
+                    department: 'Youth Department',
+                    venue: 'Training Center'
                 }
             ],
             june: [
                 {
-                    day: 7,
+                    startDay: 7,
+                    endDay: 9,
                     month: 'Jun',
-                    name: 'Youth Camp',
-                    department: 'Youth Department',
-                    venue: 'Camp Site'
-                },
-                {
-                    day: 14,
-                    month: 'Jun',
-                    name: 'Music Festival',
-                    department: 'Music Department',
-                    venue: 'Main Auditorium'
-                },
-                {
-                    day: 21,
-                    month: 'Jun',
-                    name: 'Leadership Conference',
+                    name: 'Leadership Development Seminar',
                     department: 'Administration',
-                    venue: 'Conference Center'
+                    venue: 'Conference Hall'
+                },
+                {
+                    startDay: 14,
+                    endDay: 16,
+                    month: 'Jun',
+                    name: 'Children\'s Ministry Conference',
+                    department: 'Children\'s Ministry',
+                    venue: 'Youth Center'
+                },
+                {
+                    startDay: 21,
+                    endDay: 21,
+                    month: 'Jun',
+                    name: 'Music Workshop',
+                    department: 'Music Department',
+                    venue: 'Chapel'
                 }
             ]
         },
         quarter3: {
             july: [
                 {
-                    day: 5,
+                    startDay: 5,
+                    endDay: 7,
                     month: 'Jul',
-                    name: 'Summer Bible School',
-                    department: 'Education',
+                    name: 'Youth Camp',
+                    department: 'Youth Department',
+                    venue: 'Camp Site'
+                },
+                {
+                    startDay: 12,
+                    endDay: 12,
+                    month: 'Jul',
+                    name: 'Health Ministry Workshop',
+                    department: 'Health Department',
                     venue: 'Main Hall'
                 },
                 {
-                    day: 12,
+                    startDay: 19,
+                    endDay: 21,
                     month: 'Jul',
-                    name: 'Youth Evangelism',
-                    department: 'Youth Department',
-                    venue: 'Various Locations'
-                },
-                {
-                    day: 19,
-                    month: 'Jul',
-                    name: 'Health Awareness Week',
-                    department: 'Health Department',
-                    venue: 'Community Center'
+                    name: 'Family Life Seminar',
+                    department: 'Family Ministries',
+                    venue: 'Conference Center'
                 }
             ],
             august: [
                 {
-                    day: 2,
+                    startDay: 2,
+                    endDay: 4,
                     month: 'Aug',
-                    name: 'Family Retreat',
-                    department: 'Family Life',
-                    venue: 'Retreat Center'
-                },
-                {
-                    day: 9,
-                    month: 'Aug',
-                    name: 'Music Ministry Training',
-                    department: 'Music Department',
-                    venue: 'Chapel'
-                },
-                {
-                    day: 16,
-                    month: 'Aug',
-                    name: 'Youth Leadership Workshop',
-                    department: 'Youth Department',
+                    name: 'Leadership Training',
+                    department: 'Administration',
                     venue: 'Training Center'
+                },
+                {
+                    startDay: 9,
+                    endDay: 11,
+                    month: 'Aug',
+                    name: 'Music Ministry Conference',
+                    department: 'Music Department',
+                    venue: 'Main Auditorium'
+                },
+                {
+                    startDay: 16,
+                    endDay: 16,
+                    month: 'Aug',
+                    name: 'Children\'s Ministry Workshop',
+                    department: 'Children\'s Ministry',
+                    venue: 'Youth Center'
                 }
             ],
             september: [
                 {
-                    day: 6,
+                    startDay: 6,
+                    endDay: 8,
                     month: 'Sep',
-                    name: 'Children\'s Ministry Training',
-                    department: 'Children\'s Ministry',
-                    venue: 'Youth Center'
+                    name: 'Youth Evangelism Training',
+                    department: 'Youth Department',
+                    venue: 'Conference Hall'
                 },
                 {
-                    day: 13,
+                    startDay: 13,
+                    endDay: 15,
                     month: 'Sep',
-                    name: 'Health Seminar',
+                    name: 'Health Ministry Outreach',
                     department: 'Health Department',
-                    venue: 'Main Hall'
+                    venue: 'Community Center'
                 },
                 {
-                    day: 20,
+                    startDay: 20,
+                    endDay: 20,
                     month: 'Sep',
-                    name: 'Spiritual Revival',
-                    department: 'Spiritual Development',
-                    venue: 'Main Auditorium'
+                    name: 'Music Workshop',
+                    department: 'Music Department',
+                    venue: 'Chapel'
                 }
             ]
         },
         quarter4: {
             october: [
                 {
-                    day: 4,
+                    startDay: 4,
+                    endDay: 6,
                     month: 'Oct',
-                    name: 'Youth Conference',
-                    department: 'Youth Department',
+                    name: 'Leadership Summit',
+                    department: 'Administration',
                     venue: 'Conference Center'
                 },
                 {
-                    day: 11,
+                    startDay: 11,
+                    endDay: 13,
                     month: 'Oct',
-                    name: 'Music Workshop',
-                    department: 'Music Department',
-                    venue: 'Chapel'
+                    name: 'Youth Conference',
+                    department: 'Youth Department',
+                    venue: 'Main Auditorium'
                 },
                 {
-                    day: 18,
+                    startDay: 18,
+                    endDay: 18,
                     month: 'Oct',
-                    name: 'Health Ministry Training',
+                    name: 'Health Ministry Workshop',
                     department: 'Health Department',
-                    venue: 'Training Center'
+                    venue: 'Main Hall'
                 }
             ],
             november: [
                 {
-                    day: 1,
+                    startDay: 1,
+                    endDay: 3,
                     month: 'Nov',
                     name: 'Family Life Conference',
-                    department: 'Family Life',
-                    venue: 'Main Hall'
+                    department: 'Family Ministries',
+                    venue: 'Conference Center'
                 },
                 {
-                    day: 8,
+                    startDay: 8,
+                    endDay: 10,
+                    month: 'Nov',
+                    name: 'Music Ministry Workshop',
+                    department: 'Music Department',
+                    venue: 'Chapel'
+                },
+                {
+                    startDay: 15,
+                    endDay: 15,
                     month: 'Nov',
                     name: 'Children\'s Ministry Workshop',
                     department: 'Children\'s Ministry',
                     venue: 'Youth Center'
-                },
-                {
-                    day: 15,
-                    month: 'Nov',
-                    name: 'Leadership Summit',
-                    department: 'Administration',
-                    venue: 'Conference Center'
                 }
             ],
             december: [
                 {
-                    day: 6,
+                    startDay: 6,
+                    endDay: 8,
                     month: 'Dec',
-                    name: 'Christmas Concert',
+                    name: 'Youth Evangelism Training',
+                    department: 'Youth Department',
+                    venue: 'Training Center'
+                },
+                {
+                    startDay: 13,
+                    endDay: 15,
+                    month: 'Dec',
+                    name: 'Leadership Development Seminar',
+                    department: 'Administration',
+                    venue: 'Conference Hall'
+                },
+                {
+                    startDay: 20,
+                    endDay: 20,
+                    month: 'Dec',
+                    name: 'Christmas Program',
                     department: 'Music Department',
                     venue: 'Main Auditorium'
-                },
-                {
-                    day: 13,
-                    month: 'Dec',
-                    name: 'Youth Christmas Party',
-                    department: 'Youth Department',
-                    venue: 'Youth Center'
-                },
-                {
-                    day: 20,
-                    month: 'Dec',
-                    name: 'Health Ministry Outreach',
-                    department: 'Health Department',
-                    venue: 'Community Center'
                 }
             ]
         }
@@ -442,10 +478,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to create event card
     function createEventCard(event) {
+        const dateDisplay = event.startDay === event.endDay 
+            ? `<span class="day">${event.startDay}</span>`
+            : `<span class="day">${event.startDay}-${event.endDay}</span>`;
+            
         return `
             <div class="event-card">
                 <div class="event-date">
-                    <span class="day">${event.day}</span>
+                    ${dateDisplay}
                     <span class="month">${event.month}</span>
                 </div>
                 <div class="event-details">
