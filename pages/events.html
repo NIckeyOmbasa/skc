@@ -49,6 +49,7 @@
             <section class="events-section">
                 <div class="events-header">
                     <h1><span id="current-year-display"></span> Events </h1>
+
                     <div class="events-controls">
                         <div class="month-filter">
                             <select id="month-filter">
@@ -70,6 +71,30 @@
                         <div class="search-bar">
                             <input type="text" id="event-search" placeholder="Search events, departments, or venues...">
                             <button id="search-btn" class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upcoming">
+                    <div class="upcoming-event-card">
+                        <div class="upcoming-event-header">
+                            <h2>Next Upcoming Event</h2>
+                        </div>
+                        <div class="upcoming-event-content">
+                            <div class="event-date">
+                                <div class="date-range">
+                                    <span class="day" id="upcoming-start-day">--</span>
+                                    <span class="month" id="upcoming-start-month">---</span>
+                                    <span class="date-separator" id="date-separator" style="display: none;">-</span>
+                                    <span class="day" id="upcoming-end-day" style="display: none;">--</span>
+                                    <span class="month" id="upcoming-end-month" style="display: none;">---</span>
+                                </div>
+                            </div>
+                            <div class="event-details">
+                                <h3 id="upcoming-title">Loading...</h3>
+                                <p class="department" id="upcoming-department">Department</p>
+                                <p class="venue"><i class="fas fa-map-marker-alt"></i> <span id="upcoming-venue">Venue</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>

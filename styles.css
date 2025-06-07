@@ -4006,3 +4006,93 @@ footer {
         min-height: 180px;
     }
 }
+
+.upcoming {
+    margin-bottom: 2rem;
+}
+
+.upcoming-event-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.upcoming-event-header {
+    margin-bottom: 1rem;
+}
+
+.upcoming-event-header h2 {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.upcoming-event-content {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.upcoming-event-content .event-date {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.upcoming-event-content .event-date .date-range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+}
+
+.upcoming-event-content .event-date .day {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.upcoming-event-content .event-date .month {
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.upcoming-event-content .event-date .date-separator {
+    color: #666;
+    font-size: 1.2rem;
+    margin: 0 0.2rem;
+}
+
+.upcoming-event-content .event-details {
+    flex: 1;
+    text-align: left;
+}
+
+.upcoming-event-content .event-details h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+.upcoming-event-content .event-details p {
+    margin: 0.3rem 0;
+    color: #666;
+    text-align: left;
+}
+
+.upcoming-event-content .event-details .venue {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.upcoming-event-content .event-details i {
+    margin-right: 0.5rem;
+    color: #3498db;
+}
