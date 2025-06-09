@@ -422,8 +422,8 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             images: [
-                "/assets/images/singing.jpg?w=1920",
-                "/assets/images/singing2.jpg?w=1920"
+                "/assets/images/singing.webp?w=1920",
+                "/assets/images/singing2.webp?w=1920"
             ],
             title: "Experience Worship",
             description: "Join our vibrant worship services every Sabbath.",
@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             images: [
                 "https://i.ibb.co/B21xxJRv/volunteer-hero.jpg?w=1920",
-                "/assets/images/close-up-people-working-as-team.jpg?w=1920"
+                "/assets/images/close-up-people-working-as-team.webp?w=1920"
             ],
             title: "Serving Our Community",
             description: "Making a difference through various outreach programs.",
@@ -443,7 +443,8 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             images: [
                 "https://i.ibb.co/VccKncCY/youth.jpg?w=1920",
-                "/assets/images/programmes.jpg?w=1920"
+                "/assets/images/programmes.webp?w=1920",
+                "/assets/images/singing2.webp?w=1920"
             ],
             title: "Diverse Programmes",
             description: "Engaging all people in spiritual growth, evangelism and leadership.",
@@ -453,8 +454,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ,
         {
             images: [
-                "/assets/images/bibleev.jpg?w=1920",
-                "/assets/images/bibleev.jpg?w=1920"
+                "/assets/images/bibleev.webp?w=1920",
+                "/assets/images/bibleev.webp?w=1920"
             ],
             title: "Bible Teachings",
             description: "Be enlightened by the word of God, and grow in your faith.",
