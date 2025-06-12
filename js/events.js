@@ -1,775 +1,1796 @@
-// Sample events data
+//Events data
 const eventsData = {
-    quarter1: {
-        january: [
-            {
-                startDay: 15,
-                endDay: 15,
-                month: 'Jan',
-                name: 'Youth Conference',
-                department: 'Youth Department',
-                venue: 'Conference Center'
-            },
-            {
-                startDay: 20,
-                endDay: 22,
-                month: 'Jan',
-                name: 'Health Seminar',
-                department: 'Health Department',
-                venue: 'Main Hall'
-            },
-            {
-                startDay: 25,
-                endDay: 25,
-                month: 'Jan',
-                name: 'Music Workshop',
-                department: 'Music Department',
-                venue: 'Chapel'
-            }
-        ],
-        february: [
-            {
-                startDay: 5,
-                endDay: 7,
-                month: 'Feb',
-                name: 'Leadership Training',
-                department: 'Administration',
-                venue: 'Training Center'
-            },
-            {
-                startDay: 12,
-                endDay: 12,
-                month: 'Feb',
-                name: 'Children\'s Ministry Workshop',
-                department: 'Children\'s Ministry',
-                venue: 'Youth Center'
-            },
-            {
-                startDay: 19,
-                endDay: 21,
-                month: 'Feb',
-                name: 'Prayer Retreat',
-                department: 'Spiritual Development',
-                venue: 'Retreat Center'
-            }
-        ],
-        march: [
-            {
-                startDay: 10,
-                endDay: 10,
-                month: 'Mar',
-                name: 'Music Workshop',
-                department: 'Music Department',
-                venue: 'Chapel'
-            },
-            {
-                startDay: 17,
-                endDay: 19,
-                month: 'Mar',
-                name: 'Youth Evangelism Training',
-                department: 'Youth Department',
-                venue: 'Conference Hall'
-            },
-            {
-                startDay: 24,
-                endDay: 24,
-                month: 'Mar',
-                name: 'Health Ministry Seminar',
-                department: 'Health Department',
-                venue: 'Main Hall'
-            }
-        ]
+    '2025': {
+        quarter1: {
+            january: [
+                {
+                    startDay: 4,
+                    endDay: 4,
+                    month: 'January',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'General',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 8,
+                    endDay: 18,
+                    month: 'January',
+                    name: 'Ten Days of Prayer',
+                    department: 'General',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'January',
+                    name: 'Health Ministries',
+                    department: 'Health',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 18,
+                    endDay: 18,
+                    month: 'January',
+                    name: 'Religious Liberty Day',
+                    department: 'Religious Liberty',
+                    venue: 'Local church'
+                }
+            ],
+            february: [
+                {
+                    startDay: 1,
+                    endDay: 1,
+                    month: 'February',
+                    name: 'Reach the World: Personal Outreach',
+                    department: 'Sabbath School and Personal Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 8,
+                    endDay: 15,
+                    month: 'February',
+                    name: 'Christian Home and Marriage Week',
+                    department: 'Family Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            march: [
+                {
+                    startDay: 1,
+                    endDay: 1,
+                    month: 'March',
+                    name: 'Women\'s Day of Prayer',
+                    department: 'Women\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 8,
+                    endDay: 8,
+                    month: 'March',
+                    name: 'Adventist World Radio',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 15,
+                    endDay: 22,
+                    month: 'March',
+                    name: 'Youth Week of Prayer',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 15,
+                    endDay: 15,
+                    month: 'March',
+                    name: 'Global Youth Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 15,
+                    endDay: 15,
+                    month: 'March',
+                    name: 'Global Children\'s Day',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 22,
+                    endDay: 22,
+                    month: 'March',
+                    name: 'Christian Education',
+                    department: 'Education',
+                    venue: 'Local church'
+                }
+            ]
+        },
+        quarter2: {
+            april: [
+                {
+                    startDay: 5,
+                    endDay: 5,
+                    month: 'April',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 5,
+                    endDay: 5,
+                    month: 'April',
+                    name: 'World Ambassador Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 12,
+                    endDay: 18,
+                    month: 'April',
+                    name: 'Literature Evangelism Rally Week',
+                    department: 'Publishing',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 12,
+                    endDay: 12,
+                    month: 'April',
+                    name: 'Friends of Hope Day (Visitor\'s Day)',
+                    department: 'Sabbath School and Personal Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 12,
+                    endDay: 12,
+                    month: 'April',
+                    name: 'Hope Channel International',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 12,
+                    endDay: 12,
+                    month: 'April',
+                    name: 'World Impact Day—for Distribution of Missionary Book',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 19,
+                    endDay: 19,
+                    month: 'April',
+                    name: 'Possibility Ministries Day',
+                    department: 'Possibility Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            may: [
+                {
+                    startDay: 3,
+                    endDay: 31,
+                    month: 'May',
+                    name: 'Drug Awareness Month',
+                    department: 'Health Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 3,
+                    endDay: 3,
+                    month: 'May',
+                    name: 'Reach the World: Using Communication Channels',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 17,
+                    endDay: 17,
+                    month: 'May',
+                    name: 'Global Adventurer\'s Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 24,
+                    endDay: 24,
+                    month: 'May',
+                    name: 'World Day of Prayer for Children at Risk',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            june: [
+                {
+                    startDay: 7,
+                    endDay: 7,
+                    month: 'June',
+                    name: 'Reach the World: Bible Study: Sabbath School and Correspondence Courses',
+                    department: 'Sabbath School',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 14,
+                    endDay: 14,
+                    month: 'June',
+                    name: 'Women\'s Ministries Emphasis Day',
+                    department: 'Women\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 21,
+                    endDay: 21,
+                    month: 'June',
+                    name: 'Reach the World: Nurturing Other Members and Reclaiming',
+                    department: 'Sabbath School',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 21,
+                    endDay: 21,
+                    month: 'June',
+                    name: 'Adventist Church World Refugee Day',
+                    department: 'ADRA',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 28,
+                    endDay: 28,
+                    month: 'June',
+                    name: 'World Public Campus Ministries Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                }
+            ]
+        },
+        quarter3: {
+            july: [
+                {
+                    startDay: 5,
+                    endDay: 5,
+                    month: 'July',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 12,
+                    endDay: 12,
+                    month: 'July',
+                    name: 'Mission Promotion: World Mission',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 19,
+                    endDay: 19,
+                    month: 'July',
+                    name: 'Reach the World: Media Ministry',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 26,
+                    endDay: 26,
+                    month: 'July',
+                    name: 'Children\'s Sabbath',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            august: [
+                {
+                    startDay: 2,
+                    endDay: 2,
+                    month: 'August',
+                    name: 'Global Mission Evangelism',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 9,
+                    endDay: 9,
+                    month: 'August',
+                    name: 'Reach the World: Church Planting',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 16,
+                    endDay: 16,
+                    month: 'August',
+                    name: 'Education Day',
+                    department: 'Education',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 23,
+                    endDay: 23,
+                    month: 'August',
+                    name: 'enditnow Day',
+                    department: 'Women\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 23,
+                    endDay: 23,
+                    month: 'August',
+                    name: 'Lay Evangelism',
+                    department: 'Mission',
+                    venue: 'Local church'
+                }
+            ],
+            september: [
+                {
+                    startDay: 6,
+                    endDay: 6,
+                    month: 'September',
+                    name: 'Youth Spiritual and Mission Commitment Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 7,
+                    endDay: 13,
+                    month: 'September',
+                    name: 'Family Togetherness Week of Prayer',
+                    department: 'Family Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 13,
+                    month: 'September',
+                    name: 'Family Togetherness Day of Prayer',
+                    department: 'Family Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 13,
+                    month: 'September',
+                    name: 'Mission Promotion: Unusual Opportunities',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 20,
+                    endDay: 20,
+                    month: 'September',
+                    name: 'Pathfinder Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 27,
+                    endDay: 27,
+                    month: 'September',
+                    name: 'Sabbath School Guest Day',
+                    department: 'Sabbath School',
+                    venue: 'Local church'
+                }
+            ]
+        },
+        quarter4: {
+            october: [
+                {
+                    startDay: 4,
+                    endDay: 4,
+                    month: 'October',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 4,
+                    endDay: 4,
+                    month: 'October',
+                    name: 'Adventist Review Subscription Promotion',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'October',
+                    name: 'Pastor Appreciation Day',
+                    department: 'Ministry',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 18,
+                    endDay: 18,
+                    month: 'October',
+                    name: 'Spirit of Prophecy and Adventist Heritage',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 25,
+                    endDay: 25,
+                    month: 'October',
+                    name: 'Creation Sabbath',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                }
+            ],
+            november: [
+                {
+                    startDay: 1,
+                    endDay: 8,
+                    month: 'November',
+                    name: 'Week of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 8,
+                    endDay: 14,
+                    month: 'November',
+                    name: 'e-Week of Prayer for Youth and Young Adults',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 8,
+                    endDay: 8,
+                    month: 'November',
+                    name: 'Mission Promotion: Annual Sacrifice',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 15,
+                    endDay: 15,
+                    month: 'November',
+                    name: 'World Orphans-Vulnerable Children Day',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 22,
+                    endDay: 22,
+                    month: 'November',
+                    name: 'HIV/AIDS Awareness',
+                    department: 'Health Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 29,
+                    endDay: 6,
+                    month: 'November',
+                    name: 'Stewardship Revival Week',
+                    department: 'Stewardship',
+                    venue: 'Local church'
+                }
+            ],
+            december: [
+                {
+                    startDay: 6,
+                    endDay: 6,
+                    month: 'December',
+                    name: 'Annual Stewardship Sabbath',
+                    department: 'Stewardship',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 13,
+                    month: 'December',
+                    name: 'Health Emphasis',
+                    department: 'Health Ministries',
+                    venue: 'Local church'
+                }
+            ]
+        }
     },
-    quarter2: {
-        april: [
-            {
-                startDay: 5,
-                endDay: 7,
-                month: 'Apr',
-                name: 'Easter Convention',
-                department: 'Spiritual Development',
-                venue: 'Main Auditorium'
-            },
-            {
-                startDay: 12,
-                endDay: 14,
-                month: 'Apr',
-                name: 'Youth Leadership Summit',
-                department: 'Youth Department',
-                venue: 'Conference Center'
-            },
-            {
-                startDay: 19,
-                endDay: 19,
-                month: 'Apr',
-                name: 'Music Ministry Workshop',
-                department: 'Music Department',
-                venue: 'Chapel'
-            }
-        ],
-        may: [
-            {
-                startDay: 3,
-                endDay: 5,
-                month: 'May',
-                name: 'Family Life Conference',
-                department: 'Family Ministries',
-                venue: 'Conference Center'
-            },
-            {
-                startDay: 10,
-                endDay: 10,
-                month: 'May',
-                name: 'Health Ministry Workshop',
-                department: 'Health Department',
-                venue: 'Main Hall'
-            },
-            {
-                startDay: 17,
-                endDay: 19,
-                month: 'May',
-                name: 'Youth Evangelism Training',
-                department: 'Youth Department',
-                venue: 'Training Center'
-            }
-        ],
-        june: [
-            {
-                startDay: 7,
-                endDay: 9,
-                month: 'Jun',
-                name: 'Leadership Development Seminar',
-                department: 'Administration',
-                venue: 'Conference Hall'
-            },
-            {
-                startDay: 14,
-                endDay: 16,
-                month: 'Jun',
-                name: 'Children\'s Ministry Conference',
-                department: 'Children\'s Ministry',
-                venue: 'Youth Center'
-            },
-            {
-                startDay: 21,
-                endDay: 21,
-                month: 'Jun',
-                name: 'Music Workshop',
-                department: 'Music Department',
-                venue: 'Chapel'
-            }
-        ]
+    '2026': {
+        quarter1: {
+            january: [
+                {
+                    startDay: 3,
+                    endDay: 3,
+                    month: 'January',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'General',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 7,
+                    endDay: 17,
+                    month: 'January',
+                    name: 'Ten Days of Prayer',
+                    department: 'General',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 10,
+                    endDay: 10,
+                    month: 'January',
+                    name: 'Health Ministries',
+                    department: 'Health',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 17,
+                    endDay: 17,
+                    month: 'January',
+                    name: 'Religious Liberty Day',
+                    department: 'Religious Liberty',
+                    venue: 'Local church'
+                }
+            ],
+            february: [
+                {
+                    startDay: 7,
+                    endDay: 7,
+                    month: 'February',
+                    name: 'Reach the World: Personal Outreach',
+                    department: 'Sabbath School and Personal Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 14,
+                    endDay: 21,
+                    month: 'February',
+                    name: 'Christian Home and Marriage Week',
+                    department: 'Family Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            march: [
+                {
+                    startDay: 7,
+                    endDay: 7,
+                    month: 'March',
+                    name: 'Women\'s Day of Prayer',
+                    department: 'Women\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 14,
+                    endDay: 14,
+                    month: 'March',
+                    name: 'Adventist World Radio',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 21,
+                    endDay: 28,
+                    month: 'March',
+                    name: 'Youth Week of Prayer',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 21,
+                    endDay: 21,
+                    month: 'March',
+                    name: 'Global Youth Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 21,
+                    endDay: 21,
+                    month: 'March',
+                    name: 'Global Children\'s Day',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 28,
+                    endDay: 28,
+                    month: 'March',
+                    name: 'Christian Education',
+                    department: 'Education',
+                    venue: 'Local church'
+                }
+            ]
+        },
+        quarter2: {
+            april: [
+                {
+                    startDay: 4,
+                    endDay: 4,
+                    month: 'April',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 4,
+                    endDay: 4,
+                    month: 'April',
+                    name: 'World Ambassador Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 17,
+                    month: 'April',
+                    name: 'Literature Evangelism Rally Week',
+                    department: 'Publishing',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'April',
+                    name: 'Friends of Hope Day (Visitor\'s Day)',
+                    department: 'Sabbath School and Personal Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'April',
+                    name: 'Hope Channel International',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'April',
+                    name: 'World Impact Day—for Distribution of Missionary Book',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 18,
+                    endDay: 18,
+                    month: 'April',
+                    name: 'Possibility Ministries Day',
+                    department: 'Possibility Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            may: [
+                {
+                    startDay: 2,
+                    endDay: 30,
+                    month: 'May',
+                    name: 'Drug Awareness Month',
+                    department: 'Health Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 2,
+                    endDay: 2,
+                    month: 'May',
+                    name: 'Reach the World: Using Communication Channels',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 16,
+                    endDay: 16,
+                    month: 'May',
+                    name: 'Global Adventurer\'s Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 23,
+                    endDay: 23,
+                    month: 'May',
+                    name: 'World Day of Prayer for Children at Risk',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            june: [
+                {
+                    startDay: 6,
+                    endDay: 6,
+                    month: 'June',
+                    name: 'Reach the World: Bible Study: Sabbath School and Correspondence Courses',
+                    department: 'Sabbath School',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 13,
+                    month: 'June',
+                    name: 'Women\'s Ministries Emphasis Day',
+                    department: 'Women\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 20,
+                    endDay: 20,
+                    month: 'June',
+                    name: 'Reach the World: Nurturing Other Members and Reclaiming',
+                    department: 'Sabbath School',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 20,
+                    endDay: 20,
+                    month: 'June',
+                    name: 'Adventist Church World Refugee Day',
+                    department: 'ADRA',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 27,
+                    endDay: 27,
+                    month: 'June',
+                    name: 'World Public Campus Ministries Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                }
+            ]
+        },
+        quarter3: {
+            july: [
+                {
+                    startDay: 4,
+                    endDay: 4,
+                    month: 'July',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'July',
+                    name: 'Mission Promotion: World Mission',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 18,
+                    endDay: 18,
+                    month: 'July',
+                    name: 'Reach the World: Media Ministry',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 25,
+                    endDay: 25,
+                    month: 'July',
+                    name: 'Children\'s Sabbath',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            august: [
+                {
+                    startDay: 1,
+                    endDay: 1,
+                    month: 'August',
+                    name: 'Global Mission Evangelism',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 8,
+                    endDay: 8,
+                    month: 'August',
+                    name: 'Reach the World: Church Planting',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 15,
+                    endDay: 15,
+                    month: 'August',
+                    name: 'Education Day',
+                    department: 'Education',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 22,
+                    endDay: 22,
+                    month: 'August',
+                    name: 'enditnow Day',
+                    department: 'Women\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 22,
+                    endDay: 22,
+                    month: 'August',
+                    name: 'Lay Evangelism',
+                    department: 'Mission',
+                    venue: 'Local church'
+                }
+            ],
+            september: [
+                {
+                    startDay: 5,
+                    endDay: 5,
+                    month: 'September',
+                    name: 'Youth Spiritual and Mission Commitment Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 6,
+                    endDay: 12,
+                    month: 'September',
+                    name: 'Family Togetherness Week of Prayer',
+                    department: 'Family Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 12,
+                    endDay: 12,
+                    month: 'September',
+                    name: 'Family Togetherness Day of Prayer',
+                    department: 'Family Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 12,
+                    endDay: 12,
+                    month: 'September',
+                    name: 'Mission Promotion: Unusual Opportunities',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 19,
+                    endDay: 19,
+                    month: 'September',
+                    name: 'Pathfinder Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 26,
+                    endDay: 26,
+                    month: 'September',
+                    name: 'Sabbath School Guest Day',
+                    department: 'Sabbath School',
+                    venue: 'Local church'
+                }
+            ]
+        },
+        quarter4: {
+            october: [
+                {
+                    startDay: 2,
+                    endDay: 2,
+                    month: 'October',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 2,
+                    endDay: 2,
+                    month: 'October',
+                    name: 'Adventist Review Subscription Promotion',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 9,
+                    endDay: 9,
+                    month: 'October',
+                    name: 'Pastor Appreciation Day',
+                    department: 'Ministry',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 16,
+                    endDay: 16,
+                    month: 'October',
+                    name: 'Spirit of Prophecy and Adventist Heritage',
+                    department: 'Education',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 23,
+                    endDay: 23,
+                    month: 'October',
+                    name: 'Creation Sabbath',
+                    department: 'Education',
+                    venue: 'Local church'
+                }
+            ],
+            november: [
+                {
+                    startDay: 6,
+                    endDay: 13,
+                    month: 'November',
+                    name: 'Week of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 19,
+                    month: 'November',
+                    name: 'e-Week of Prayer for Youth and Young Adults',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 13,
+                    month: 'November',
+                    name: 'Mission Promotion: Annual Sacrifice',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 20,
+                    endDay: 20,
+                    month: 'November',
+                    name: 'World Orphans-Vulnerable Children Day',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 27,
+                    endDay: 27,
+                    month: 'November',
+                    name: 'HIV/AIDS Awareness',
+                    department: 'Health Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 27,
+                    endDay: 4,
+                    month: 'November',
+                    name: 'Stewardship Revival Week',
+                    department: 'Stewardship',
+                    venue: 'Local church'
+                }
+            ],
+            december: [
+                {
+                    startDay: 4,
+                    endDay: 4,
+                    month: 'December',
+                    name: 'Annual Stewardship Sabbath',
+                    department: 'Stewardship',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'December',
+                    name: 'Health Emphasis',
+                    department: 'Health Ministries',
+                    venue: 'Local church'
+                }
+            ]
+        }
     },
-    quarter3: {
-        july: [
-            {
-                startDay: 5,
-                endDay: 7,
-                month: 'Jul',
-                name: 'Youth Camp',
-                department: 'Youth Department',
-                venue: 'Camp Site'
-            },
-            {
-                startDay: 12,
-                endDay: 12,
-                month: 'Jul',
-                name: 'Health Ministry Workshop',
-                department: 'Health Department',
-                venue: 'Main Hall'
-            },
-            {
-                startDay: 19,
-                endDay: 21,
-                month: 'Jul',
-                name: 'Family Life Seminar',
-                department: 'Family Ministries',
-                venue: 'Conference Center'
-            }
-        ],
-        august: [
-            {
-                startDay: 2,
-                endDay: 4,
-                month: 'Aug',
-                name: 'Leadership Training',
-                department: 'Administration',
-                venue: 'Training Center'
-            },
-            {
-                startDay: 9,
-                endDay: 11,
-                month: 'Aug',
-                name: 'Music Ministry Conference',
-                department: 'Music Department',
-                venue: 'Main Auditorium'
-            },
-            {
-                startDay: 16,
-                endDay: 16,
-                month: 'Aug',
-                name: 'Children\'s Ministry Workshop',
-                department: 'Children\'s Ministry',
-                venue: 'Youth Center'
-            }
-        ],
-        september: [
-            {
-                startDay: 6,
-                endDay: 8,
-                month: 'Sep',
-                name: 'Youth Evangelism Training',
-                department: 'Youth Department',
-                venue: 'Conference Hall'
-            },
-            {
-                startDay: 13,
-                endDay: 15,
-                month: 'Sep',
-                name: 'Health Ministry Outreach',
-                department: 'Health Department',
-                venue: 'Community Center'
-            },
-            {
-                startDay: 20,
-                endDay: 20,
-                month: 'Sep',
-                name: 'Music Workshop',
-                department: 'Music Department',
-                venue: 'Chapel'
-            }
-        ]
-    },
-    quarter4: {
-        october: [
-            {
-                startDay: 4,
-                endDay: 6,
-                month: 'Oct',
-                name: 'Leadership Summit',
-                department: 'Administration',
-                venue: 'Conference Center'
-            },
-            {
-                startDay: 11,
-                endDay: 13,
-                month: 'Oct',
-                name: 'Youth Conference',
-                department: 'Youth Department',
-                venue: 'Main Auditorium'
-            },
-            {
-                startDay: 18,
-                endDay: 18,
-                month: 'Oct',
-                name: 'Health Ministry Workshop',
-                department: 'Health Department',
-                venue: 'Main Hall'
-            }
-        ],
-        november: [
-            {
-                startDay: 1,
-                endDay: 3,
-                month: 'Nov',
-                name: 'Family Life Conference',
-                department: 'Family Ministries',
-                venue: 'Conference Center'
-            },
-            {
-                startDay: 8,
-                endDay: 10,
-                month: 'Nov',
-                name: 'Music Ministry Workshop',
-                department: 'Music Department',
-                venue: 'Chapel'
-            },
-            {
-                startDay: 15,
-                endDay: 15,
-                month: 'Nov',
-                name: 'Children\'s Ministry Workshop',
-                department: 'Children\'s Ministry',
-                venue: 'Youth Center'
-            }
-        ],
-        december: [
-            {
-                startDay: 6,
-                endDay: 8,
-                month: 'Dec',
-                name: 'Youth Evangelism Training',
-                department: 'Youth Department',
-                venue: 'Training Center'
-            },
-            {
-                startDay: 13,
-                endDay: 15,
-                month: 'Dec',
-                name: 'Leadership Development Seminar',
-                department: 'Administration',
-                venue: 'Conference Hall'
-            },
-            {
-                startDay: 20,
-                endDay: 20,
-                month: 'Dec',
-                name: 'Christmas Program',
-                department: 'Music Department',
-                venue: 'Main Auditorium'
-            }
-        ]
+    '2027': {
+        quarter1: {
+            january: [
+                {
+                    startDay: 2,
+                    endDay: 2,
+                    month: 'January',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'General',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 6,
+                    endDay: 16,
+                    month: 'January',
+                    name: 'Ten Days of Prayer',
+                    department: 'General',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 9,
+                    endDay: 9,
+                    month: 'January',
+                    name: 'Health Ministries',
+                    department: 'Health',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 16,
+                    endDay: 16,
+                    month: 'January',
+                    name: 'Religious Liberty Day',
+                    department: 'Religious Liberty',
+                    venue: 'Local church'
+                }
+            ],
+            february: [
+                {
+                    startDay: 6,
+                    endDay: 6,
+                    month: 'February',
+                    name: 'Reach the World: Personal Outreach',
+                    department: 'Sabbath School and Personal Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 20,
+                    month: 'February',
+                    name: 'Christian Home and Marriage Week',
+                    department: 'Family Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            march: [
+                {
+                    startDay: 6,
+                    endDay: 6,
+                    month: 'March',
+                    name: 'Women\'s Day of Prayer',
+                    department: 'Women\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 13,
+                    month: 'March',
+                    name: 'Adventist World Radio',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 20,
+                    endDay: 27,
+                    month: 'March',
+                    name: 'Youth Week of Prayer',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 20,
+                    endDay: 20,
+                    month: 'March',
+                    name: 'Global Youth Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 20,
+                    endDay: 20,
+                    month: 'March',
+                    name: 'Global Children\'s Day',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 27,
+                    endDay: 27,
+                    month: 'March',
+                    name: 'Christian Education',
+                    department: 'Education',
+                    venue: 'Local church'
+                }
+            ]
+        },
+        quarter2: {
+            april: [
+                {
+                    startDay: 3,
+                    endDay: 3,
+                    month: 'April',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 3,
+                    endDay: 3,
+                    month: 'April',
+                    name: 'World Ambassador Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 10,
+                    endDay: 16,
+                    month: 'April',
+                    name: 'Literature Evangelism Rally Week',
+                    department: 'Publishing',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 10,
+                    endDay: 10,
+                    month: 'April',
+                    name: 'Friends of Hope Day (Visitor\'s Day)',
+                    department: 'Sabbath School and Personal Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 10,
+                    endDay: 10,
+                    month: 'April',
+                    name: 'Hope Channel International',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 10,
+                    endDay: 10,
+                    month: 'April',
+                    name: 'World Impact Day—for Distribution of Missionary Book',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 17,
+                    endDay: 17,
+                    month: 'April',
+                    name: 'Possibility Ministries Day',
+                    department: 'Possibility Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            may: [
+                {
+                    startDay: 1,
+                    endDay: 29,
+                    month: 'May',
+                    name: 'Drug Awareness Month',
+                    department: 'Health Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 1,
+                    endDay: 1,
+                    month: 'May',
+                    name: 'Reach the World: Using Communication Channels',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 15,
+                    endDay: 15,
+                    month: 'May',
+                    name: 'Global Adventurer\'s Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 22,
+                    endDay: 22,
+                    month: 'May',
+                    name: 'World Day of Prayer for Children at Risk',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            june: [
+                {
+                    startDay: 5,
+                    endDay: 5,
+                    month: 'June',
+                    name: 'Reach the World: Bible Study: Sabbath School and Correspondence Courses',
+                    department: 'Sabbath School',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 12,
+                    endDay: 12,
+                    month: 'June',
+                    name: 'Women\'s Ministries Emphasis Day',
+                    department: 'Women\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 19,
+                    endDay: 19,
+                    month: 'June',
+                    name: 'Reach the World: Nurturing Other Members and Reclaiming',
+                    department: 'Sabbath School',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 19,
+                    endDay: 19,
+                    month: 'June',
+                    name: 'Adventist Church World Refugee Day',
+                    department: 'ADRA',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 26,
+                    endDay: 26,
+                    month: 'June',
+                    name: 'World Public Campus Ministries Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                }
+            ]
+        },
+        quarter3: {
+            july: [
+                {
+                    startDay: 3,
+                    endDay: 3,
+                    month: 'July',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 10,
+                    endDay: 10,
+                    month: 'July',
+                    name: 'Mission Promotion: World Mission',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 17,
+                    endDay: 17,
+                    month: 'July',
+                    name: 'Reach the World: Media Ministry',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 24,
+                    endDay: 24,
+                    month: 'July',
+                    name: 'Children\'s Sabbath',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                }
+            ],
+            august: [
+                {
+                    startDay: 7,
+                    endDay: 7,
+                    month: 'August',
+                    name: 'Global Mission Evangelism',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 14,
+                    endDay: 14,
+                    month: 'August',
+                    name: 'Reach the World: Church Planting',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 21,
+                    endDay: 21,
+                    month: 'August',
+                    name: 'Education Day',
+                    department: 'Education',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 28,
+                    endDay: 28,
+                    month: 'August',
+                    name: 'enditnow Day',
+                    department: 'Women\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 28,
+                    endDay: 28,
+                    month: 'August',
+                    name: 'Lay Evangelism',
+                    department: 'Mission',
+                    venue: 'Local church'
+                }
+            ],
+            september: [
+                {
+                    startDay: 4,
+                    endDay: 4,
+                    month: 'September',
+                    name: 'Youth Spiritual and Mission Commitment Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 5,
+                    endDay: 11,
+                    month: 'September',
+                    name: 'Family Togetherness Week of Prayer',
+                    department: 'Family Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'September',
+                    name: 'Family Togetherness Day of Prayer',
+                    department: 'Family Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'September',
+                    name: 'Mission Promotion: Unusual Opportunities',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 18,
+                    endDay: 18,
+                    month: 'September',
+                    name: 'Pathfinder Day',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 25,
+                    endDay: 25,
+                    month: 'September',
+                    name: 'Sabbath School Guest Day',
+                    department: 'Sabbath School',
+                    venue: 'Local church'
+                }
+            ]
+        },
+        quarter4: {
+            october: [
+                {
+                    startDay: 2,
+                    endDay: 2,
+                    month: 'October',
+                    name: 'Quarterly Day of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 2,
+                    endDay: 2,
+                    month: 'October',
+                    name: 'Adventist Review Subscription Promotion',
+                    department: 'Communication',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 9,
+                    endDay: 9,
+                    month: 'October',
+                    name: 'Pastor Appreciation Day',
+                    department: 'Ministry',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 16,
+                    endDay: 16,
+                    month: 'October',
+                    name: 'Spirit of Prophecy and Adventist Heritage',
+                    department: 'Education',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 23,
+                    endDay: 23,
+                    month: 'October',
+                    name: 'Creation Sabbath',
+                    department: 'Education',
+                    venue: 'Local church'
+                }
+            ],
+            november: [
+                {
+                    startDay: 6,
+                    endDay: 13,
+                    month: 'November',
+                    name: 'Week of Prayer',
+                    department: 'Spiritual Development',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 19,
+                    month: 'November',
+                    name: 'e-Week of Prayer for Youth and Young Adults',
+                    department: 'Youth Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 13,
+                    endDay: 13,
+                    month: 'November',
+                    name: 'Mission Promotion: Annual Sacrifice',
+                    department: 'Mission',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 20,
+                    endDay: 20,
+                    month: 'November',
+                    name: 'World Orphans-Vulnerable Children Day',
+                    department: 'Children\'s Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 27,
+                    endDay: 27,
+                    month: 'November',
+                    name: 'HIV/AIDS Awareness',
+                    department: 'Health Ministries',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 27,
+                    endDay: 4,
+                    month: 'November',
+                    name: 'Stewardship Revival Week',
+                    department: 'Stewardship',
+                    venue: 'Local church'
+                }
+            ],
+            december: [
+                {
+                    startDay: 4,
+                    endDay: 4,
+                    month: 'December',
+                    name: 'Annual Stewardship Sabbath',
+                    department: 'Stewardship',
+                    venue: 'Local church'
+                },
+                {
+                    startDay: 11,
+                    endDay: 11,
+                    month: 'December',
+                    name: 'Health Emphasis',
+                    department: 'Health Ministries',
+                    venue: 'Local church'
+                }
+            ]
+        }
     }
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Set current year in the header
-    const currentYear = new Date().getFullYear();
-    document.getElementById('current-year-display').textContent = currentYear;
+// Function to get current quarter
+function getCurrentQuarter() {
+    const month = new Date().getMonth() + 1; // JavaScript months are 0-based
+    if (month >= 1 && month <= 3) return 1;
+    if (month >= 4 && month <= 6) return 2;
+    if (month >= 7 && month <= 9) return 3;
+    return 4;
+}
 
-    // Function to determine current quarter based on month
-    function getCurrentQuarter() {
-        const currentMonth = new Date().getMonth() + 1; // JavaScript months are 0-based
-        if (currentMonth >= 1 && currentMonth <= 3) return 1;
-        if (currentMonth >= 4 && currentMonth <= 6) return 2;
-        if (currentMonth >= 7 && currentMonth <= 9) return 3;
-        return 4;
-    }
-
-    // Function to activate a specific quarter
-    function activateQuarter(quarterNumber) {
-        // Remove active class from all tabs and events
-        quarterTabs.forEach(t => t.classList.remove('active'));
-        quarterEvents.forEach(e => e.classList.remove('active'));
-
-        // Add active class to the specified quarter tab and events
-        const activeTab = document.querySelector(`.quarter-tab[data-quarter="${quarterNumber}"]`);
-        const activeQuarter = document.getElementById(`quarter-${quarterNumber}`);
-        
-        if (activeTab && activeQuarter) {
-            activeTab.classList.add('active');
-            activeQuarter.classList.add('active');
-            updateMonthFilter(quarterNumber);
-        }
-    }
-
-    // Function to update upcoming event
-    function updateUpcomingEvent() {
-        const currentDate = new Date();
-        let nearestEvent = null;
-        let smallestDateDiff = Infinity;
-
-        // Function to create a Date object from event data
-        function createEventDate(event, month) {
-            const monthMap = {
-                'Jan': 0, 'Feb': 1, 'Mar': 2, 'Apr': 3, 'May': 4, 'Jun': 5,
-                'Jul': 6, 'Aug': 7, 'Sep': 8, 'Oct': 9, 'Nov': 10, 'Dec': 11
-            };
-            return new Date(currentYear, monthMap[event.month], event.startDay);
-        }
-
-        // Check all quarters and months for the nearest upcoming event
-        for (const quarter in eventsData) {
-            for (const month in eventsData[quarter]) {
-                eventsData[quarter][month].forEach(event => {
-                    const eventDate = createEventDate(event, month);
-                    const dateDiff = eventDate - currentDate;
-
-                    // Only consider future events
-                    if (dateDiff > 0 && dateDiff < smallestDateDiff) {
-                        smallestDateDiff = dateDiff;
-                        nearestEvent = {
-                            ...event,
-                            date: eventDate
-                        };
-                    }
-                });
-            }
-        }
-
-        // Update the DOM with the nearest event
-        if (nearestEvent) {
-            // Update start date
-            document.getElementById('upcoming-start-day').textContent = nearestEvent.startDay;
-            document.getElementById('upcoming-start-month').textContent = nearestEvent.month;
-            
-            // Handle end date for multi-day events
-            const dateSeparator = document.getElementById('date-separator');
-            const endDay = document.getElementById('upcoming-end-day');
-            const endMonth = document.getElementById('upcoming-end-month');
-            
-            if (nearestEvent.endDay && nearestEvent.endDay !== nearestEvent.startDay) {
-                // Show end date for multi-day events
-                dateSeparator.style.display = 'inline';
-                endDay.style.display = 'inline';
-                endMonth.style.display = 'inline';
-                endDay.textContent = nearestEvent.endDay;
-                endMonth.textContent = nearestEvent.month;
-            } else {
-                // Hide end date for single-day events
-                dateSeparator.style.display = 'none';
-                endDay.style.display = 'none';
-                endMonth.style.display = 'none';
-            }
-
-            document.getElementById('upcoming-title').textContent = nearestEvent.name;
-            document.getElementById('upcoming-department').textContent = nearestEvent.department;
-            document.getElementById('upcoming-venue').textContent = nearestEvent.venue;
-        } else {
-            // If no upcoming events are found
-            document.getElementById('upcoming-title').textContent = "No upcoming events";
-            document.getElementById('upcoming-department').textContent = "";
-            document.getElementById('upcoming-venue').textContent = "";
-            document.getElementById('date-separator').style.display = 'none';
-            document.getElementById('upcoming-end-day').style.display = 'none';
-            document.getElementById('upcoming-end-month').style.display = 'none';
-        }
-    }
-
-    // Update the upcoming event when the page loads
-    updateUpcomingEvent();
-
-    // Update the upcoming event every hour
-    setInterval(updateUpcomingEvent, 3600000);
-
-    // Quarter tabs functionality
-    const quarterTabs = document.querySelectorAll('.quarter-tab');
-    const quarterEvents = document.querySelectorAll('.quarter-events');
-    const monthFilter = document.getElementById('month-filter');
-
-    // Function to update month filter options
-    function updateMonthFilter(quarter) {
-        // Clear existing options except "Select Month"
-        while (monthFilter.options.length > 1) {
-            monthFilter.remove(1);
-        }
-
-        // Add months based on quarter
-        const months = {
-            1: ['January', 'February', 'March'],
-            2: ['April', 'May', 'June'],
-            3: ['July', 'August', 'September'],
-            4: ['October', 'November', 'December']
-        };
-
-        months[quarter].forEach((month, index) => {
-            const option = document.createElement('option');
-            option.value = quarter * 3 - 2 + index;
-            option.textContent = month;
-            monthFilter.appendChild(option);
-        });
-
-        // Reset to "Select Month"
-        monthFilter.value = 'all';
-    }
-
-    // Activate current quarter on page load
+// Function to set current quarter
+function setCurrentQuarter() {
     const currentQuarter = getCurrentQuarter();
-    activateQuarter(currentQuarter);
+    console.log('Setting current quarter:', currentQuarter);
+    
+    // Remove active class from all quarter tabs and sections
+    document.querySelectorAll('.quarter-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    document.querySelectorAll('.quarter-events').forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Set current quarter as active
+    const currentQuarterTab = document.querySelector(`.quarter-tab[data-quarter="${currentQuarter}"]`);
+    const currentQuarterSection = document.getElementById(`quarter-${currentQuarter}`);
+    
+    if (currentQuarterTab && currentQuarterSection) {
+        currentQuarterTab.classList.add('active');
+        currentQuarterSection.classList.add('active');
+        console.log('Successfully set quarter', currentQuarter, 'as active');
+    } else {
+        console.log('Failed to find elements for quarter', currentQuarter);
+    }
+}
 
-    quarterTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const quarterNumber = parseInt(tab.dataset.quarter);
-            activateQuarter(quarterNumber);
-
-            // If there's an active search, update visibility
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            if (searchTerm) {
-                // First hide all quarter sections
-                quarterEvents.forEach(quarter => {
-                    quarter.style.display = 'none';
+// Function to update events for a specific year
+function updateEventsForYear(year) {
+    console.log('Updating events for year:', year);
+    
+    // Clear existing events
+    document.querySelectorAll('.quarter-events').forEach(section => {
+        section.innerHTML = '';
+        section.classList.remove('active');
+    });
+    
+    // Reset quarter tabs
+    document.querySelectorAll('.quarter-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Get events data for the selected year
+    const yearData = eventsData[year];
+    if (!yearData) {
+        console.log('No data found for year:', year);
+        return;
+    }
+    
+    // Populate events for each quarter
+    Object.keys(yearData).forEach(quarter => {
+        const quarterSection = document.getElementById(`quarter-${quarter.split('quarter')[1]}`);
+        if (!quarterSection) {
+            console.log('Quarter section not found:', quarter);
+            return;
+        }
+        
+        // Create month sections
+        const months = ['january', 'february', 'march', 'april', 'may', 'june', 
+                       'july', 'august', 'september', 'october', 'november', 'december'];
+        
+        months.forEach(month => {
+            if (yearData[quarter][month]) {
+                const monthSection = document.createElement('div');
+                monthSection.className = 'month-section';
+                monthSection.dataset.month = getMonthNumber(month);
+                
+                const monthHeader = document.createElement('h2');
+                monthHeader.textContent = month.charAt(0).toUpperCase() + month.slice(1);
+                monthSection.appendChild(monthHeader);
+                
+                const eventsGrid = document.createElement('div');
+                eventsGrid.className = 'events-grid';
+                
+                // Add events for this month
+                yearData[quarter][month].forEach(event => {
+                    const eventCard = createEventCard(event);
+                    eventsGrid.appendChild(eventCard);
                 });
+                
+                monthSection.appendChild(eventsGrid);
+                quarterSection.appendChild(monthSection);
+            }
+        });
+    });
+    
+    // Set current quarter as active only if viewing current year
+    const currentYear = new Date().getFullYear();
+    if (year === currentYear.toString()) {
+        console.log('Setting current quarter for current year');
+        setCurrentQuarter();
+    } else {
+        console.log('Setting first quarter for year:', year);
+        // For other years, show first quarter by default
+        const firstQuarterTab = document.querySelector('.quarter-tab[data-quarter="1"]');
+        const firstQuarterSection = document.getElementById('quarter-1');
+        
+        if (firstQuarterTab && firstQuarterSection) {
+            firstQuarterTab.classList.add('active');
+            firstQuarterSection.classList.add('active');
+        }
+    }
+}
 
-                // Show the active quarter section
-                const quarterSection = document.getElementById(`quarter-${quarterNumber}`);
-                quarterSection.style.display = 'block';
+// Function to create an event card
+function createEventCard(event) {
+    const card = document.createElement('div');
+    card.className = 'event-card';
+    
+    const dateDisplay = event.startDay === event.endDay ? 
+        `<span class="day">${event.startDay}</span>` :
+        `<span class="day">${event.startDay}-${event.endDay}</span>`;
+    
+    card.innerHTML = `
+        <div class="event-date">
+            ${dateDisplay}
+            <span class="month">${event.month}</span>
+        </div>
+        <div class="event-details">
+            <h3>${event.name}</h3>
+            <p class="department">${event.department}</p>
+            <p class="venue"><i class="fas fa-map-marker-alt"></i> ${event.venue}</p>
+        </div>
+    `;
+    
+    return card;
+}
 
-                // Filter events within the active quarter
-                const eventCards = quarterSection.querySelectorAll('.event-card');
-                let hasVisibleEvents = false;
+// Function to update upcoming event
+function updateUpcomingEvent() {
+    const upcomingTitle = document.getElementById('upcoming-title');
+    const upcomingDepartment = document.getElementById('upcoming-department');
+    const upcomingVenue = document.getElementById('upcoming-venue');
+    const upcomingStartDay = document.getElementById('upcoming-start-day');
+    const upcomingStartMonth = document.getElementById('upcoming-start-month');
+    const upcomingEndDay = document.getElementById('upcoming-end-day');
+    const upcomingEndMonth = document.getElementById('upcoming-end-month');
+    const dateSeparator = document.getElementById('date-separator');
 
-                eventCards.forEach(card => {
-                    const eventTitle = card.querySelector('h3').textContent.toLowerCase();
-                    const department = card.querySelector('.department').textContent.toLowerCase();
-                    const venue = card.querySelector('.venue').textContent.toLowerCase();
+    if (!upcomingTitle || !upcomingDepartment || !upcomingVenue || 
+        !upcomingStartDay || !upcomingStartMonth || !upcomingEndDay || 
+        !upcomingEndMonth || !dateSeparator) return;
+
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0); // Set to start of day for accurate comparison
+    let nextEvent = null;
+    let nextEventDate = null;
+
+    // Always use current year for upcoming events
+    const currentYear = new Date().getFullYear();
+    
+    // Check events in the current year
+    const yearData = eventsData[currentYear];
+    if (yearData) {
+        Object.keys(yearData).forEach(quarter => {
+            Object.keys(yearData[quarter]).forEach(month => {
+                yearData[quarter][month].forEach(event => {
+                    const eventMonth = getMonthNumber(event.month) - 1; // Convert to 0-based month
+                    const eventDay = parseInt(event.startDay);
                     
-                    const isVisible = 
-                        eventTitle.includes(searchTerm) ||
-                        department.includes(searchTerm) ||
-                        venue.includes(searchTerm);
+                    // Create date object for event
+                    const eventDate = new Date(currentYear, eventMonth, eventDay);
+                    eventDate.setHours(0, 0, 0, 0); // Set to start of day for accurate comparison
                     
-                    card.style.display = isVisible ? 'flex' : 'none';
-                    
-                    if (isVisible) {
-                        hasVisibleEvents = true;
-                        // Make sure the parent month section is visible
-                        const monthSection = card.closest('.month-section');
-                        if (monthSection) {
-                            monthSection.style.display = 'block';
+                    // Only consider future events
+                    if (eventDate >= currentDate) {
+                        if (!nextEventDate || eventDate < nextEventDate) {
+                            nextEvent = event;
+                            nextEventDate = eventDate;
                         }
                     }
                 });
-
-                // Update no results message
-                const noResultsMessage = document.getElementById('no-results-message');
-                if (!hasVisibleEvents) {
-                    if (!noResultsMessage) {
-                        const message = document.createElement('div');
-                        message.id = 'no-results-message';
-                        message.style.textAlign = 'center';
-                        message.style.padding = '2rem';
-                        message.style.color = '#666';
-                        message.innerHTML = 'No events found matching your search criteria.';
-                        document.querySelector('.events-container').appendChild(message);
-                    }
-                } else {
-                    if (noResultsMessage) {
-                        noResultsMessage.remove();
-                    }
-                }
-            } else {
-                // If no search term, show all events in the active quarter
-                quarterEvents.forEach(quarter => {
-                    quarter.style.display = 'none';
-                });
-                const quarterSection = document.getElementById(`quarter-${quarterNumber}`);
-                quarterSection.style.display = 'block';
-                
-                // Show all events in the active quarter
-                const eventCards = quarterSection.querySelectorAll('.event-card');
-                eventCards.forEach(card => {
-                    card.style.display = 'flex';
-                });
-                
-                // Show all month sections in the active quarter
-                const monthSections = quarterSection.querySelectorAll('.month-section');
-                monthSections.forEach(section => {
-                    section.style.display = 'block';
-                });
-                
-                // Remove no results message if it exists
-                const noResultsMessage = document.getElementById('no-results-message');
-                if (noResultsMessage) {
-                    noResultsMessage.remove();
-                }
-            }
-        });
-    });
-
-    // Initialize month filter for first quarter
-    updateMonthFilter(1);
-
-    // Month filter functionality
-    const monthSections = document.querySelectorAll('.month-section');
-
-    monthFilter.addEventListener('change', () => {
-        const selectedMonth = monthFilter.value;
-        const activeQuarter = document.querySelector('.quarter-events.active');
-
-        monthSections.forEach(section => {
-            if (section.closest('.quarter-events') === activeQuarter) {
-                if (selectedMonth === 'all' || section.dataset.month === selectedMonth) {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
-            }
-        });
-    });
-
-    // Function to create event card
-    function createEventCard(event) {
-        const dateDisplay = event.startDay === event.endDay 
-            ? `<span class="day">${event.startDay}</span>`
-            : `<span class="day">${event.startDay}-${event.endDay}</span>`;
-            
-        return `
-            <div class="event-card">
-                <div class="event-date">
-                    ${dateDisplay}
-                    <span class="month">${event.month}</span>
-                </div>
-                <div class="event-details">
-                    <h3>${event.name}</h3>
-                    <p class="department">${event.department}</p>
-                    <p class="venue"><i class="fas fa-map-marker-alt"></i> ${event.venue}</p>
-                </div>
-            </div>
-        `;
-    }
-
-    // Function to populate events
-    function populateEvents() {
-        // Populate Quarter 1 events
-        const quarter1 = document.getElementById('quarter-1');
-        const quarter2 = document.getElementById('quarter-2');
-        const quarter3 = document.getElementById('quarter-3');
-        const quarter4 = document.getElementById('quarter-4');
-        
-        // Quarter 1
-        eventsData.quarter1.january.forEach(event => {
-            quarter1.querySelector('[data-month="1"] .events-grid').innerHTML += createEventCard(event);
-        });
-        eventsData.quarter1.february.forEach(event => {
-            quarter1.querySelector('[data-month="2"] .events-grid').innerHTML += createEventCard(event);
-        });
-        eventsData.quarter1.march.forEach(event => {
-            quarter1.querySelector('[data-month="3"] .events-grid').innerHTML += createEventCard(event);
-        });
-
-        // Quarter 2
-        eventsData.quarter2.april.forEach(event => {
-            quarter2.querySelector('[data-month="4"] .events-grid').innerHTML += createEventCard(event);
-        });
-        eventsData.quarter2.may.forEach(event => {
-            quarter2.querySelector('[data-month="5"] .events-grid').innerHTML += createEventCard(event);
-        });
-        eventsData.quarter2.june.forEach(event => {
-            quarter2.querySelector('[data-month="6"] .events-grid').innerHTML += createEventCard(event);
-        });
-
-        // Quarter 3
-        eventsData.quarter3.july.forEach(event => {
-            quarter3.querySelector('[data-month="7"] .events-grid').innerHTML += createEventCard(event);
-        });
-        eventsData.quarter3.august.forEach(event => {
-            quarter3.querySelector('[data-month="8"] .events-grid').innerHTML += createEventCard(event);
-        });
-        eventsData.quarter3.september.forEach(event => {
-            quarter3.querySelector('[data-month="9"] .events-grid').innerHTML += createEventCard(event);
-        });
-
-        // Quarter 4
-        eventsData.quarter4.october.forEach(event => {
-            quarter4.querySelector('[data-month="10"] .events-grid').innerHTML += createEventCard(event);
-        });
-        eventsData.quarter4.november.forEach(event => {
-            quarter4.querySelector('[data-month="11"] .events-grid').innerHTML += createEventCard(event);
-        });
-        eventsData.quarter4.december.forEach(event => {
-            quarter4.querySelector('[data-month="12"] .events-grid').innerHTML += createEventCard(event);
+            });
         });
     }
 
-    // Initialize events
-    populateEvents();
-
-    // Event Search Functionality
-    const searchInput = document.getElementById('event-search');
-    const searchBtn = document.getElementById('search-btn');
-
-    function performSearch() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        const eventCards = document.querySelectorAll('.event-card');
-        let hasVisibleEvents = false;
-        
-        // First, hide all quarter sections
-        document.querySelectorAll('.quarter-events').forEach(quarter => {
-            quarter.style.display = 'none';
-        });
-        
-        eventCards.forEach(card => {
-            const eventTitle = card.querySelector('h3').textContent.toLowerCase();
-            const department = card.querySelector('.department').textContent.toLowerCase();
-            const venue = card.querySelector('.venue').textContent.toLowerCase();
-            
-            const isVisible = 
-                eventTitle.includes(searchTerm) ||
-                department.includes(searchTerm) ||
-                venue.includes(searchTerm);
-            
-            // Show/hide the card
-            card.style.display = isVisible ? 'flex' : 'none';
-            
-            if (isVisible) {
-                hasVisibleEvents = true;
-                
-                // Make sure the parent month section is visible
-                const monthSection = card.closest('.month-section');
-                if (monthSection) {
-                    monthSection.style.display = 'block';
-                    
-                    // Make sure the parent quarter section is visible
-                    const quarterSection = monthSection.closest('.quarter-events');
-                    if (quarterSection) {
-                        quarterSection.style.display = 'block';
-                    }
-                }
-            }
-        });
-        
-        // Show/hide quarter tabs based on search results
-        const quarterTabs = document.querySelectorAll('.quarter-tab');
-        quarterTabs.forEach(tab => {
-            const quarterId = `quarter-${tab.dataset.quarter}`;
-            const quarterSection = document.getElementById(quarterId);
-            if (quarterSection) {
-                tab.style.display = quarterSection.style.display === 'block' ? 'block' : 'none';
-            }
-        });
-        
-        // If no events are found, show a message
-        const noResultsMessage = document.getElementById('no-results-message');
-        if (!hasVisibleEvents) {
-            if (!noResultsMessage) {
-                const message = document.createElement('div');
-                message.id = 'no-results-message';
-                message.style.textAlign = 'center';
-                message.style.padding = '2rem';
-                message.style.color = '#666';
-                message.innerHTML = 'No events found matching your search criteria.';
-                document.querySelector('.events-container').appendChild(message);
-            }
-        } else {
-            if (noResultsMessage) {
-                noResultsMessage.remove();
-            }
+    // If no future events found in current year, check next year
+    if (!nextEvent) {
+        const nextYearData = eventsData[currentYear + 1];
+        if (nextYearData) {
+            Object.keys(nextYearData).forEach(quarter => {
+                Object.keys(nextYearData[quarter]).forEach(month => {
+                    nextYearData[quarter][month].forEach(event => {
+                        const eventMonth = getMonthNumber(event.month) - 1;
+                        const eventDay = parseInt(event.startDay);
+                        
+                        const eventDate = new Date(currentYear + 1, eventMonth, eventDay);
+                        eventDate.setHours(0, 0, 0, 0);
+                        
+                        if (!nextEventDate || eventDate < nextEventDate) {
+                            nextEvent = event;
+                            nextEventDate = eventDate;
+                        }
+                    });
+                });
+            });
         }
     }
 
-    // Search on input change with debounce
-    let searchTimeout;
-    searchInput.addEventListener('input', function() {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(performSearch, 300);
+    if (nextEvent) {
+        // Update event details
+        upcomingTitle.textContent = nextEvent.name;
+        upcomingDepartment.textContent = nextEvent.department;
+        upcomingVenue.textContent = nextEvent.venue;
+        
+        // Update date display
+        upcomingStartDay.textContent = nextEvent.startDay;
+        upcomingStartMonth.textContent = nextEvent.month;
+        
+        // Handle multi-day events
+        if (nextEvent.startDay !== nextEvent.endDay) {
+            dateSeparator.style.display = 'inline';
+            upcomingEndDay.style.display = 'inline';
+            upcomingEndMonth.style.display = 'inline';
+            upcomingEndDay.textContent = nextEvent.endDay;
+            upcomingEndMonth.textContent = nextEvent.month;
+        } else {
+            dateSeparator.style.display = 'none';
+            upcomingEndDay.style.display = 'none';
+            upcomingEndMonth.style.display = 'none';
+        }
+    } else {
+        // Show "No upcoming events" message
+        upcomingTitle.textContent = 'No upcoming events';
+        upcomingDepartment.textContent = 'Check back later for new events';
+        upcomingVenue.textContent = '';
+        upcomingStartDay.textContent = '--';
+        upcomingStartMonth.textContent = '---';
+        dateSeparator.style.display = 'none';
+        upcomingEndDay.style.display = 'none';
+        upcomingEndMonth.style.display = 'none';
+    }
+}
+
+// Helper function to convert month name to number
+function getMonthNumber(monthName) {
+    const months = {
+        'january': 1, 'february': 2, 'march': 3, 'april': 4,
+        'may': 5, 'june': 6, 'july': 7, 'august': 8,
+        'september': 9, 'october': 10, 'november': 11, 'december': 12
+    };
+    return months[monthName.toLowerCase()];
+}
+
+// Initialize everything when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded');
+    
+    // Set current year and next years in tabs
+    const yearTabs = document.querySelectorAll('.year-tab');
+    const currentYear = new Date().getFullYear();
+    console.log('Current year:', currentYear);
+    
+    yearTabs[0].textContent = currentYear;
+    yearTabs[0].dataset.year = currentYear;
+    yearTabs[1].textContent = currentYear + 1;
+    yearTabs[1].dataset.year = currentYear + 1;
+    yearTabs[2].textContent = currentYear + 2;
+    yearTabs[2].dataset.year = currentYear + 2;
+    
+    // Add click handlers for year tabs
+    yearTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            yearTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            updateEventsForYear(this.dataset.year);
+        });
     });
-
-    // Search on button click
-    searchBtn.addEventListener('click', performSearch);
-
-    // Search on Enter key
+    
+    // Set current year as active by default
+    yearTabs[0].classList.add('active');
+    
+    // Initialize quarter tabs
+    const quarterTabs = document.querySelectorAll('.quarter-tab');
+    quarterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            quarterTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            const quarterId = `quarter-${this.dataset.quarter}`;
+            document.querySelectorAll('.quarter-events').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(quarterId).classList.add('active');
+        });
+    });
+    
+    // Initialize month filter
+    const monthFilter = document.getElementById('month-filter');
+    monthFilter.addEventListener('change', function() {
+        const selectedMonth = this.value;
+        document.querySelectorAll('.month-section').forEach(section => {
+            if (selectedMonth === 'all' || section.dataset.month === selectedMonth) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    });
+    
+    // Initialize search functionality
+    const searchInput = document.getElementById('event-search');
+    const searchButton = document.getElementById('search-btn');
+    
+    function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const activeYear = document.querySelector('.year-tab.active').dataset.year;
+        const events = document.querySelectorAll('.event-card');
+        
+        events.forEach(event => {
+            const eventName = event.querySelector('h3').textContent.toLowerCase();
+            const eventDepartment = event.querySelector('.department').textContent.toLowerCase();
+            const eventVenue = event.querySelector('.venue').textContent.toLowerCase();
+            
+            if (eventName.includes(searchTerm) || 
+                eventDepartment.includes(searchTerm) || 
+                eventVenue.includes(searchTerm)) {
+                event.style.display = 'block';
+            } else {
+                event.style.display = 'none';
+            }
+        });
+    }
+    
+    searchButton.addEventListener('click', performSearch);
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             performSearch();
         }
     });
-
-    // Clear search when month filter changes
-    document.getElementById('month-filter').addEventListener('change', function() {
-        searchInput.value = '';
-        const eventCards = document.querySelectorAll('.event-card');
-        eventCards.forEach(card => {
-            card.style.display = 'flex';
-            const monthSection = card.closest('.month-section');
-            if (monthSection) {
-                monthSection.style.display = 'block';
-            }
-            const quarterSection = card.closest('.quarter-events');
-            if (quarterSection) {
-                quarterSection.style.display = 'block';
-            }
-        });
-        
-        // Show all quarter tabs
-        const quarterTabs = document.querySelectorAll('.quarter-tab');
-        quarterTabs.forEach(tab => {
-            tab.style.display = 'block';
-        });
-        
-        // Remove no results message if it exists
-        const noResultsMessage = document.getElementById('no-results-message');
-        if (noResultsMessage) {
-            noResultsMessage.remove();
-        }
-    });
+    
+    // Initialize with current year's events first
+    console.log('Initializing with current year events');
+    updateEventsForYear(currentYear);
+    
+    // Initialize upcoming event
+    updateUpcomingEvent();
 }); 
